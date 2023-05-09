@@ -58,8 +58,22 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'price',
            'price',
            'Preis', // In a productive plugin this should be translated
-           true
-       ]);
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'itemText-name1',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "name1",
+                    'type' => "text",
+                    'lang' => "de",
+                    'value' => null
+                ]
+            ]
+        ]);
         
         /** @var SimpleTemplateField $price */
        $image = pluginApp(SimpleTemplateField::class, [

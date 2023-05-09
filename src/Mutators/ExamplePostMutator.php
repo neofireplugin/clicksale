@@ -1,6 +1,6 @@
 <?php
 
-namespace BasicCatalogExport\Mutators;
+namespace LenandoCatalogExport\Mutators;
 
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
 

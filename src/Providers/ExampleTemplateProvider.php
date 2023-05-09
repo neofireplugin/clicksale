@@ -50,7 +50,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'price',
             'price',
             'Preis', // In a productive plugin this should be translated
-            true
+            true,
+            'priceId' => 1 // Add this line to select price with ID 1
         ]);
 
         /** @var SimpleTemplateField $sku */

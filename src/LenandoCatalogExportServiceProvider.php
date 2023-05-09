@@ -2,7 +2,7 @@
 
 namespace LenandoCatalogExport;
 
-use BasicCatalogExport\Providers\ExampleTemplateProvider;
+use LenandoCatalogExport\Providers\ExampleTemplateProvider;
 use Plenty\Modules\Catalog\Contracts\TemplateContainerContract;
 use Plenty\Plugin\ServiceProvider;
 

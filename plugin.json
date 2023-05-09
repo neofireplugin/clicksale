@@ -1,6 +1,6 @@
 {
   "version": "0.0.5",
-  "name": "LenandoCatalogExport",
+  "name": "lenando",
   "description": "lenando Plugin",
   "namespace": "LenandoCatalogExport",
   "pluginIcon": "icon_plugin_xs.png",

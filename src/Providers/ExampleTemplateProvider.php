@@ -39,9 +39,17 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 
         /** @var SimpleTemplateField $name */
         $name = pluginApp(SimpleTemplateField::class, [
-            'variationName',
+            'name',
             'name',
             'Produktname', // In a productive plugin this should be translated
+            true
+        ]);
+        
+        /** @var SimpleTemplateField $name */
+        $description = pluginApp(SimpleTemplateField::class, [
+            'description',
+            'description',
+            'Beschreibung', // In a productive plugin this should be translated
             true
         ]);
 
@@ -49,15 +57,55 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
        $price = pluginApp(SimpleTemplateField::class, [
            'price',
            'price',
-           'Sales price', // In a productive plugin this should be translated
+           'Preis', // In a productive plugin this should be translated
            true
        ]);
-
+        
+        /** @var SimpleTemplateField $price */
+       $image = pluginApp(SimpleTemplateField::class, [
+           'image',
+           'image',
+           'Bildlink', // In a productive plugin this should be translated
+           true
+       ]);
+        
+        /** @var SimpleTemplateField $price */
+       $manufacturer = pluginApp(SimpleTemplateField::class, [
+           'manufactuerer',
+           'manufactuerer',
+           'Hersteller', // In a productive plugin this should be translated
+           true
+       ]);
+        
         /** @var SimpleTemplateField $sku */
-        $sku = pluginApp(SimpleTemplateField::class, [
+        $link = pluginApp(SimpleTemplateField::class, [
+            'link',
+            'link',
+            'Produktlink', // In a productive plugin this should be translated
+            true
+        ]);
+        
+        /** @var SimpleTemplateField $sku */
+        $ean = pluginApp(SimpleTemplateField::class, [
             'barcode',
             'barcode',
             'EAN', // In a productive plugin this should be translated
+            true
+        ]);
+        
+        /** @var SimpleTemplateField $sku */
+        $shipping = pluginApp(SimpleTemplateField::class, [
+            'shipping',
+            'shipping',
+            'Versandkosten', // In a productive plugin this should be translated
+            true
+        ]);
+        
+        /** @var SimpleTemplateField $sku */
+        $baseprice = pluginApp(SimpleTemplateField::class, [
+            'baseprice',
+            'baseprice',
+            'Grundpreis', // In a productive plugin this should be translated
             true
         ]);
     
@@ -83,8 +131,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         $simpleGroup->addGroupField($name);
+        $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
-        $simpleGroup->addGroupField($sku);
+        $simpleGroup->addGroupField($image);
+        $simpleGroup->addGroupField($manufacturer);
+        $simpleGroup->addGroupField($link);
+        $simpleGroup->addGroupField($ean);
+        $simpleGroup->addGroupField($shipping);
+        $simpleGroup->addGroupField($baseprice);
+        $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
 
         $templateGroupContainer->addGroup($simpleGroup);

@@ -60,8 +60,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'EAN', // In a productive plugin this should be translated
             true
         ]);
-        $sku->setCallable(pluginApp(ExampleSkuCallback::class));
-
+    
         /** @var SimpleTemplateField $stock */
         $stock = pluginApp(SimpleTemplateField::class, [
             'stock',

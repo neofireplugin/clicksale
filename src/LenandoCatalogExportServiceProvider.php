@@ -12,7 +12,7 @@ use Plenty\Plugin\ServiceProvider;
  */
 class LenandoCatalogExportServiceProvider extends ServiceProvider
 {
-    const PLUGIN_NAME = "LenandoCatalogExport";
+    const PLUGIN_NAME = "lenando";
 
     public function register()
     {

@@ -104,8 +104,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         
         /** @var SimpleTemplateField $price */
        $image = pluginApp(SimpleTemplateField::class, [
-           'image',
-           'image',
+           'produktUrl',
+           'produktUrl',
            'Bildlink', // In a productive plugin this should be translated
             true,
             false,
@@ -113,12 +113,14 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'fieldId' => 'image-image-image',
-                    'id' => null,
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
                     'isCombined' => false,
-                    'key' => null,
-                    'type' => "images",
-                    'value' => null
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "0"
                 ]
             ]
         ]);

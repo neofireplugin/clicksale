@@ -46,13 +46,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-        $price = pluginApp(SimpleTemplateField::class, [
-            'price',
-            'price',
-            'Preis', // In a productive plugin this should be translated
-            true,
-            'priceId' => 1 // Add this line to select price with ID 1
-        ]);
+       $price = pluginApp(SimpleTemplateField::class, [
+           'price',
+           'price',
+           'Sales price', // In a productive plugin this should be translated
+           true
+       ]);
 
         /** @var SimpleTemplateField $sku */
         $sku = pluginApp(SimpleTemplateField::class, [

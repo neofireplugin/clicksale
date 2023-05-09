@@ -1,9 +1,9 @@
 <?php
 
-namespace BasicCatalogExport\Providers;
+namespace LenandoCatalogExport\Providers;
 
-use BasicCatalogExport\Callbacks\ExampleSkuCallback;
-use BasicCatalogExport\Mutators\ExamplePostMutator;
+use LenandoCatalogExport\Callbacks\ExampleSkuCallback;
+use LenandoCatalogExport\Mutators\ExamplePostMutator;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
 use Plenty\Modules\Catalog\Containers\Filters\CatalogFilterBuilderContainer;
 use Plenty\Modules\Catalog\Containers\TemplateGroupContainer;
@@ -19,7 +19,7 @@ use Plenty\Modules\Item\Catalog\ExportTypes\Variation\Filters\Builders\Variation
 
 /**
  * Class ExampleTemplateProvider
- * @package BasicCatalogExport\Providers
+ * @package LenandoCatalogExport\Providers
  */
 class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 {

@@ -42,22 +42,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'name',
             'name',
             'Produktname', // In a productive plugin this should be translated
-            true
-        ]);
-        
-        /** @var SimpleTemplateField $name */
-        $description = pluginApp(SimpleTemplateField::class, [
-            'description',
-            'description',
-            'Beschreibung', // In a productive plugin this should be translated
-            true
-        ]);
-
-        /** @var SimpleTemplateField $price */
-       $price = pluginApp(SimpleTemplateField::class, [
-           'price',
-           'price',
-           'Preis', // In a productive plugin this should be translated
             true,
             false,
             false,
@@ -73,6 +57,22 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'value' => null
                 ]
             ]
+        ]);
+        
+        /** @var SimpleTemplateField $name */
+        $description = pluginApp(SimpleTemplateField::class, [
+            'description',
+            'description',
+            'Beschreibung', // In a productive plugin this should be translated
+            true
+        ]);
+
+        /** @var SimpleTemplateField $price */
+       $price = pluginApp(SimpleTemplateField::class, [
+           'price',
+           'price',
+           'Preis', // In a productive plugin this should be translated
+            true
         ]);
         
         /** @var SimpleTemplateField $price */

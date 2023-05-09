@@ -21,6 +21,6 @@ class LenandoCatalogExportServiceProvider extends ServiceProvider
         /** @var TemplateContainerContract $templateContainer */
         $templateContainer = pluginApp(TemplateContainerContract::class);
 
-        $templateContainer->register("variationExport", self::PLUGIN_NAME, ExampleTemplateProvider::class);
+        $templateContainer->register("lenando", self::PLUGIN_NAME, ExampleTemplateProvider::class);
     }
 }

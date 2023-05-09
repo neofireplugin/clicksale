@@ -1,4 +1,4 @@
-plentymarkets plugin BasicCatalogExport
+plentymarkets plugin LenandoCatalogExport
 
 Copyright © 2019 plentysystems AG
 

@@ -41,7 +41,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $name = pluginApp(SimpleTemplateField::class, [
             'variationName',
             'name',
-            'Variation name', // In a productive plugin this should be translated
+            'Produktname', // In a productive plugin this should be translated
             true
         ]);
 
@@ -49,15 +49,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $price = pluginApp(SimpleTemplateField::class, [
             'price',
             'price',
-            'Sales price', // In a productive plugin this should be translated
+            'Preis', // In a productive plugin this should be translated
             true
         ]);
 
         /** @var SimpleTemplateField $sku */
         $sku = pluginApp(SimpleTemplateField::class, [
-            'sku',
-            'sku',
-            'SKU', // In a productive plugin this should be translated
+            'barcode',
+            'barcode',
+            'EAN', // In a productive plugin this should be translated
             true
         ]);
         $sku->setCallable(pluginApp(ExampleSkuCallback::class));
@@ -66,7 +66,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $stock = pluginApp(SimpleTemplateField::class, [
             'stock',
             'stock',
-            'Stock', // In a productive plugin this should be translated
+            'Bestand', // In a productive plugin this should be translated
             true,
             false,
             false,
@@ -89,61 +89,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($stock);
 
         $templateGroupContainer->addGroup($simpleGroup);
-
-        // Complex field
-
-        /** @var TemplateGroup $complexGroup */
-        $complexGroup = pluginApp(TemplateGroup::class,
-            [
-                "identifier" => "groupTwo",
-                "label" => "Complex fields" // In a productive plugin this should be translated
-            ]);
-
-        /** @var ComplexTemplateField $name */
-        $category = pluginApp(ComplexTemplateField::class, [
-            'category',
-            'category',
-            'Category', // In a productive plugin this should be translated
-            pluginApp(ExampleCategoryMappingValueProvider::class),
-            true
-        ]);
-
-        $complexGroup->addGroupField($category);
-        $templateGroupContainer->addGroup($complexGroup);
-
-        // Combined field
-
-        /** @var TemplateGroup $combinedGroup */
-        $combinedGroup = pluginApp(TemplateGroup::class,
-            [
-                "identifier" => "groupThree",
-                "label" => "Combined fields" // In a productive plugin this should be translated
-            ]);
-
-        /** @var CatalogTemplateFieldContainer $simpleContainer */
-        $simpleContainer = pluginApp(CatalogTemplateFieldContainer::class);
-
-        /** @var SimpleTemplateField $name */
-        $barcode = pluginApp(SimpleTemplateField::class, [
-            'barcode',
-            'barcode',
-            'Barcode',
-            true
-        ]);
-
-        $simpleContainer->addField($barcode);
-
-        /** @var CombinedTemplateField $name */
-        $barcodeType = pluginApp(CombinedTemplateField::class, [
-            'barcodeType',
-            'barcodeType',
-            'Barcode type', // In a productive plugin this should be translated
-            pluginApp(ExampleBarcodeTypeMappingValueProvider::class),
-            $simpleContainer
-        ]);
-
-        $combinedGroup->addGroupField($barcodeType);
-        $templateGroupContainer->addGroup($combinedGroup);
 
         return $templateGroupContainer;
     }

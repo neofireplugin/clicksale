@@ -128,15 +128,41 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'manufactuerer',
            'manufactuerer',
            'Hersteller', // In a productive plugin this should be translated
-           true
-       ]);
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'item-manufacturerName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "manufacturer.name",
+                    'type' => "item",
+                    'value' => null
+                ]
+            ]
+        ]);
         
-        /** @var SimpleTemplateField $sku */
+        /** @var SimpleTemplateField $link */
         $link = pluginApp(SimpleTemplateField::class, [
             'link',
             'link',
             'Produktlink', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'item-manufacturerName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "manufacturer.name",
+                    'type' => "item",
+                    'value' => null
+                ]
+            ]
         ]);
         
         /** @var SimpleTemplateField $sku */
@@ -144,7 +170,20 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'barcode',
             'barcode',
             'EAN', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'barcode-1',
+                    'id' => 1,
+                    'isCombined' => false,
+                    'key' => "code",
+                    'type' => "barcode-code",
+                    'value' => null
+                ]
+            ]
         ]);
         
         /** @var SimpleTemplateField $sku */
@@ -160,7 +199,20 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'baseprice',
             'baseprice',
             'Grundpreis', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'variation-mayShowUnitPrice',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "mayShowUnitPrice",
+                    'type' => "variation",
+                    'value' => null
+                ]
+            ]
         ]);
     
         /** @var SimpleTemplateField $stock */

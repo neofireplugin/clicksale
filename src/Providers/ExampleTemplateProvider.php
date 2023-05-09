@@ -64,7 +64,21 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'description',
             'description',
             'Beschreibung', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'itemText-description',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "description",
+                    'type' => "text",
+                    'lang' => "de",
+                    'value' => null
+                ]
+            ]
         ]);
 
         /** @var SimpleTemplateField $price */
@@ -72,7 +86,20 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'price',
            'price',
            'Preis', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'salesPrice-1',
+                    'id' => 1,
+                    'isCombined' => false,
+                    'key' => "price",
+                    'type' => "sales-price",
+                    'value' => null
+                ]
+            ]
         ]);
         
         /** @var SimpleTemplateField $price */
@@ -80,8 +107,21 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'image',
            'image',
            'Bildlink', // In a productive plugin this should be translated
-           true
-       ]);
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-image-image',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => null,
+                    'type' => "images",
+                    'value' => null
+                ]
+            ]
+        ]);
         
         /** @var SimpleTemplateField $price */
        $manufacturer = pluginApp(SimpleTemplateField::class, [

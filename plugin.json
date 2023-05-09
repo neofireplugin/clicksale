@@ -1,15 +1,15 @@
 {
   "version": "0.0.1",
-  "name": "BasicCatalogExport",
-  "description": "Beispielplugin zur Demonstration des Katalogs in Plugins ",
-  "namespace": "BasicCatalogExport",
+  "name": "LenandoCatalogExport",
+  "description": "lenando Plugin",
+  "namespace": "LenandoCatalogExport",
   "pluginIcon": "icon_plugin_xs.png",
-  "author": "plentymarkets GmbH",
-  "email": "support@plentymarkets.eu",
+  "author": "neofire Deutschland",
+  "email": "info@neofire.de",
   "authorIcon": "icon_author_xs.png",
   "shortDescription": {
-    "de": "Beispielplugin für Catalog Guide",
-    "en": "Example plugin for catalog guide"
+    "de": "Plugin für den Artikelexport zu lenando",
+    "en": "Plugin to Export the Items to lenando"
   },
   "license": "AGPL-3.0",
   "categories": [
@@ -17,7 +17,7 @@
   ],
   "price": 0.00,
   "type": "general",
-  "serviceProvider": "BasicCatalogExport\\BasicCatalogExportServiceProvider",
+  "serviceProvider": "LenandoCatalogExport\\LenandoCatalogExportServiceProvider",
   "dependencies": {},
   "runOnBuild": []
 }

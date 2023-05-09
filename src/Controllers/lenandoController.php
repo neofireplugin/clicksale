@@ -7,7 +7,7 @@ use Plenty\Modules\Catalog\Contracts\CatalogExportRepositoryContract;
 use Plenty\Modules\Catalog\Contracts\CatalogRepositoryContract;
 use Plenty\Plugin\Controller;
 
-class VariationExportController extends Controller
+class lenandoController extends Controller
 {
     public function export()
     {

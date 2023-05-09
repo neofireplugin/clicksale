@@ -34,7 +34,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup = pluginApp(TemplateGroup::class,
             [
                 "identifier" => "groupOne",
-                "label" => "Simple fields" // In a productive plugin this should be translated
+                "label" => "Allgemein" // In a productive plugin this should be translated
             ]);
 
         /** @var SimpleTemplateField $name */

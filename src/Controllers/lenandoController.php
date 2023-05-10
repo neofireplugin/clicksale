@@ -29,7 +29,7 @@ class lenandoController extends Controller
         do {
             $paginatedResult = $catalogRepository->all($page);
             foreach ($paginatedResult->getResult() as $catalog) {
-                $exportService = $catalogExportRepository->exportById($catalog->id);
+                //$exportService = $catalogExportRepository->exportById($catalog->id);
 
                 $exportService->applyDynamicConfig(); Will run the dynamic config logic. This should be used in most scenarios
 

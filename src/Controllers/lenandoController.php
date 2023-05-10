@@ -31,7 +31,7 @@ class lenandoController extends Controller
             foreach ($paginatedResult->getResult() as $catalog) {
                 $exportService = $catalogExportRepository->exportById($catalog->id);
 
-                //$exportService->applyDynamicConfig(); Will run the dynamic config logic. This should be used in most scenarios
+                $exportService->applyDynamicConfig(); Will run the dynamic config logic. This should be used in most scenarios
 
                 // These can be used to only trigger a partial export of a catalog. A good example is a stock export,
                 // which does not need the item specific data apart from stock and sku

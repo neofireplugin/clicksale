@@ -3,6 +3,7 @@
 namespace LenandoCatalogExport\Providers;
 
 use LenandoCatalogExport\Callbacks\ExampleSkuCallback;
+use LenandoCatalogExport\Converters\CSVResultConverter;
 use LenandoCatalogExport\Mutators\ExamplePostMutator;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
 use Plenty\Modules\Catalog\Containers\Filters\CatalogFilterBuilderContainer;
@@ -13,9 +14,10 @@ use Plenty\Modules\Catalog\Models\ComplexTemplateField;
 use Plenty\Modules\Catalog\Models\SimpleTemplateField;
 use Plenty\Modules\Catalog\Models\TemplateGroup;
 use Plenty\Modules\Catalog\Templates\Providers\AbstractGroupedTemplateProvider;
-use Plenty\Modules\Item\Catalog\ExportTypes\Variation\Filters\Builders\Item\ItemHasIds;
-use Plenty\Modules\Item\Catalog\ExportTypes\Variation\Filters\Builders\VariationBase\VariationIsActive;
-use Plenty\Modules\Item\Catalog\ExportTypes\Variation\Filters\Builders\VariationFilterBuilderFactory;
+use Plenty\Modules\Pim\Catalog\Variation\Filters\FilterBuilderFactory;
+use Plenty\Modules\Catalog\Contracts\CatalogDynamicConfigContract;
+use LenandoCatalogExport\DynamicConfig\ExampleDynamicConfig;
+use Plenty\Modules\Catalog\Services\Converter\Containers\ResultConverterContainer;
 
 /**
  * Class ExampleTemplateProvider
@@ -34,37 +36,117 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup = pluginApp(TemplateGroup::class,
             [
                 "identifier" => "groupOne",
-                "label" => "Allgemein" // In a productive plugin this should be translated
+                "label" => "Simple fields" // In a productive plugin this should be translated
             ]);
 
         /** @var SimpleTemplateField $name */
         $name = pluginApp(SimpleTemplateField::class, [
+            'variationName',
             'name',
-            'name',
-            'Produktname', // In a productive plugin this should be translated
+            'Variation name', // In a productive plugin this should be translated
+            true
+        ]);
+
+        /** @var SimpleTemplateField $price */
+        $price = pluginApp(SimpleTemplateField::class, [
+            'price',
+            'price',
+            'Sales price', // In a productive plugin this should be translated
+            true
+        ]);
+
+        /** @var SimpleTemplateField $sku */
+        $sku = pluginApp(SimpleTemplateField::class, [
+            'sku',
+            'sku',
+            'SKU', // In a productive plugin this should be translated
+            true
+        ]);
+        $sku->setCallable(pluginApp(ExampleSkuCallback::class));
+
+        /** @var SimpleTemplateField $stock */
+        $stock = pluginApp(SimpleTemplateField::class, [
+            'stock',
+            'stock',
+            'Stock', // In a productive plugin this should be translated
             true,
             false,
             false,
             [],
             [
                 [
-                    'fieldId' => 'itemText-name1',
-                    'id' => null,
+                    'fieldId' => 'stock-0',
+                    'id' => 0,
                     'isCombined' => false,
-                    'key' => "name1",
-                    'type' => "text",
-                    'lang' => "de",
+                    'key' => null,
+                    'type' => "stock",
                     'value' => null
                 ]
             ]
         ]);
-      
 
         $simpleGroup->addGroupField($name);
-       
+        $simpleGroup->addGroupField($price);
+        $simpleGroup->addGroupField($sku);
+        $simpleGroup->addGroupField($stock);
 
         $templateGroupContainer->addGroup($simpleGroup);
-    
+
+        // Complex field
+
+        /** @var TemplateGroup $complexGroup */
+        $complexGroup = pluginApp(TemplateGroup::class,
+            [
+                "identifier" => "groupTwo",
+                "label" => "Complex fields" // In a productive plugin this should be translated
+            ]);
+
+        /** @var ComplexTemplateField $name */
+        $category = pluginApp(ComplexTemplateField::class, [
+            'category',
+            'category',
+            'Category', // In a productive plugin this should be translated
+            pluginApp(ExampleCategoryMappingValueProvider::class),
+            true
+        ]);
+
+        $complexGroup->addGroupField($category);
+        $templateGroupContainer->addGroup($complexGroup);
+
+        // Combined field
+
+        /** @var TemplateGroup $combinedGroup */
+        $combinedGroup = pluginApp(TemplateGroup::class,
+            [
+                "identifier" => "groupThree",
+                "label" => "Combined fields" // In a productive plugin this should be translated
+            ]);
+
+        /** @var CatalogTemplateFieldContainer $simpleContainer */
+        $simpleContainer = pluginApp(CatalogTemplateFieldContainer::class);
+
+        /** @var SimpleTemplateField $name */
+        $barcode = pluginApp(SimpleTemplateField::class, [
+            'barcode',
+            'barcode',
+            'Barcode',
+            true
+        ]);
+
+        $simpleContainer->addField($barcode);
+
+        /** @var CombinedTemplateField $name */
+        $barcodeType = pluginApp(CombinedTemplateField::class, [
+            'barcodeType',
+            'barcodeType',
+            'Barcode type', // In a productive plugin this should be translated
+            pluginApp(ExampleBarcodeTypeMappingValueProvider::class),
+            $simpleContainer
+        ]);
+
+        $combinedGroup->addGroupField($barcodeType);
+        $templateGroupContainer->addGroup($combinedGroup);
+
         return $templateGroupContainer;
     }
 
@@ -72,8 +154,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
     {
         /** @var CatalogFilterBuilderContainer $container */
         $container = pluginApp(CatalogFilterBuilderContainer::class);
-        /** @var VariationFilterBuilderFactory $filterBuilderFactory */
-        $filterBuilderFactory = pluginApp(VariationFilterBuilderFactory::class);
+        /** @var FilterBuilderFactory $filterBuilderFactory */
+        $filterBuilderFactory = pluginApp(FilterBuilderFactory::class);
 
         $variationIsActiveFilter = $filterBuilderFactory->variationIsActive();
         $variationIsActiveFilter->setShouldBeActive(true);
@@ -86,10 +168,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
     {
         /** @var CatalogFilterBuilderContainer $container */
         $container = pluginApp(CatalogFilterBuilderContainer::class);
-        /** @var VariationFilterBuilderFactory $filterBuilderFactory */
-        $filterBuilderFactory = pluginApp(VariationFilterBuilderFactory::class);
+        /** @var FilterBuilderFactory $filterBuilderFactory */
+        $filterBuilderFactory = pluginApp(FilterBuilderFactory::class);
 
-        $itemHasIdsFilter = $filterBuilderFactory->itemHasIds();
+        $itemHasIdsFilter = $filterBuilderFactory->itemHasAtLeastOneId();
         $container->addFilterBuilder($itemHasIdsFilter);
 
         return $container;
@@ -105,5 +187,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
     public function getPostMutator(): CatalogMutatorContract
     {
         return pluginApp(ExamplePostMutator::class);
+    }
+
+    public function DefaultResultConverterContainer(): ResultConverterContainer
+    {
+        /** @var ResultConverterContainer $container */
+        $container = pluginApp(ResultConverterContainer::class);
+        /** @var CSVResultConverter $csvConverter */
+        $csvConverter = pluginApp(CSVResultConverter::class);
+        $container->addResultConverter($csvConverter);
+        return $container;
     }
 }

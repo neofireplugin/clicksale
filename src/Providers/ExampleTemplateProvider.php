@@ -41,34 +41,190 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 
         /** @var SimpleTemplateField $name */
         $name = pluginApp(SimpleTemplateField::class, [
-            'variationName',
             'name',
-            'Variation name', // In a productive plugin this should be translated
-            true
+            'name',
+            'Produktname', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'itemText-name1',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "name1",
+                    'type' => "text",
+                    'lang' => "de",
+                    'value' => null
+                ]
+            ]
         ]);
+        
+        /** @var SimpleTemplateField $name */
+        $description = pluginApp(SimpleTemplateField::class, [
+            'description',
+            'description',
+            'Beschreibung', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'itemText-description',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "description",
+                    'type' => "text",
+                    'lang' => "de",
+                    'value' => null
+                ]
+            ]
+        ]);
+        
 
         /** @var SimpleTemplateField $price */
-        $price = pluginApp(SimpleTemplateField::class, [
-            'price',
-            'price',
-            'Sales price', // In a productive plugin this should be translated
-            true
+       $price = pluginApp(SimpleTemplateField::class, [
+           'price',
+           'price',
+           'Preis', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'salesPrice-1',
+                    'id' => 1,
+                    'isCombined' => false,
+                    'key' => "price",
+                    'type' => "sales-price",
+                    'value' => null
+                ]
+            ]
         ]);
-
+        
+        /** @var SimpleTemplateField $price */
+       $image = pluginApp(SimpleTemplateField::class, [
+           'produktUrl',
+           'produktUrl',
+           'Bildlink', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "0"
+                ]
+            ]
+        ]);
+        
+        /** @var SimpleTemplateField $price */
+       $manufacturer = pluginApp(SimpleTemplateField::class, [
+           'manufactuerer',
+           'manufactuerer',
+           'Hersteller', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'item-manufacturerName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "manufacturer.name",
+                    'type' => "item",
+                    'value' => null
+                ]
+            ]
+        ]);
+        
+        /** @var SimpleTemplateField $link */
+        $link = pluginApp(SimpleTemplateField::class, [
+            'link',
+            'link',
+            'Produktlink', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'item-manufacturerName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "manufacturer.name",
+                    'type' => "item",
+                    'value' => null
+                ]
+            ]
+        ]);
+        
         /** @var SimpleTemplateField $sku */
-        $sku = pluginApp(SimpleTemplateField::class, [
-            'sku',
-            'sku',
-            'SKU', // In a productive plugin this should be translated
+        $ean = pluginApp(SimpleTemplateField::class, [
+            'barcode',
+            'barcode',
+            'EAN', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'barcode-1',
+                    'id' => 1,
+                    'isCombined' => false,
+                    'key' => "code",
+                    'type' => "barcode-code",
+                    'value' => null
+                ]
+            ]
+        ]);
+        
+        /** @var SimpleTemplateField $sku */
+        $shipping = pluginApp(SimpleTemplateField::class, [
+            'shipping',
+            'shipping',
+            'Versandkosten', // In a productive plugin this should be translated
             true
         ]);
-        $sku->setCallable(pluginApp(ExampleSkuCallback::class));
-
+        
+        /** @var SimpleTemplateField $sku */
+        $baseprice = pluginApp(SimpleTemplateField::class, [
+            'baseprice',
+            'baseprice',
+            'Grundpreis', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'variation-mayShowUnitPrice',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "mayShowUnitPrice",
+                    'type' => "variation",
+                    'value' => null
+                ]
+            ]
+        ]);
+    
         /** @var SimpleTemplateField $stock */
         $stock = pluginApp(SimpleTemplateField::class, [
             'stock',
             'stock',
-            'Stock', // In a productive plugin this should be translated
+            'Bestand', // In a productive plugin this should be translated
             true,
             false,
             false,
@@ -86,8 +242,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         $simpleGroup->addGroupField($name);
+        $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
-        $simpleGroup->addGroupField($sku);
+        $simpleGroup->addGroupField($image);
+        $simpleGroup->addGroupField($manufacturer);
+        $simpleGroup->addGroupField($link);
+        $simpleGroup->addGroupField($ean);
+        $simpleGroup->addGroupField($shipping);
+        $simpleGroup->addGroupField($baseprice);
+        $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
 
         $templateGroupContainer->addGroup($simpleGroup);

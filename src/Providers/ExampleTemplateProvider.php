@@ -151,8 +151,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
 
-         {"key":"link","sources":[{"isCombined":false,"value":null,"fieldId":"variation-webshopUrl","type":"webshop-url","key":"url","id":null,"client":28305,"lang":"de","referrer":null}]}
-        
         /** @var SimpleTemplateField $link */
         $link = pluginApp(SimpleTemplateField::class, [
             'link',

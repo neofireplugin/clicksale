@@ -104,6 +104,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ]
             ]
         ]);
+
         
         /** @var SimpleTemplateField $price */
        $image = pluginApp(SimpleTemplateField::class, [
@@ -148,6 +149,9 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ]
             ]
         ]);
+
+
+         {"key":"link","sources":[{"isCombined":false,"value":null,"fieldId":"variation-webshopUrl","type":"webshop-url","key":"url","id":null,"client":28305,"lang":"de","referrer":null}]}
         
         /** @var SimpleTemplateField $link */
         $link = pluginApp(SimpleTemplateField::class, [
@@ -160,12 +164,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'fieldId' => 'item-manufacturerName',
+                    'fieldId' => 'variation-webshopUrl',
                     'id' => null,
                     'isCombined' => false,
-                    'key' => "manufacturer.name",
+                    'key' => "url",
                     'type' => "item",
-                    'value' => null
+                    'value' => "webshop-url",
+                    'client' => null,
+                    'lang' => "de",
+                    'referrer' => null
                 ]
             ]
         ]);

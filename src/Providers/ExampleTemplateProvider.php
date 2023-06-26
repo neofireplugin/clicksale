@@ -240,28 +240,24 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'id' => null,
                     'salesPrice' => '1',
                     'currency' => 'EUR'
-                ],
+                ]
+            ]
+        ]);
+
+        /** @var SimpleTemplateField $sku */
+        $baseprice2 = pluginApp(SimpleTemplateField::class, [
+            'Grundpreis',
+            'baseprice',
+            'Grundpreis', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
                 [
                     'type' => "own-value",
                     'value' => ' € / '
-                ],
-                [
-                    'value' => '',
-                    'fieldId' => 'basePrice-amount',
-                    'type' => "base-price",
-                    'key' => "amount",
-                    'id' => null,
-                    'salesPrice' => '1'
-                ],
-                [
-                    'value' => '',
-                    'fieldId' => 'basePrice-unit-name',
-                    'type' => "base-price",
-                    'key' => "unit-name",
-                    'id' => null,
-                    'salesPrice' => '1',
-                    'lang' => 'de'
-                ]    
+                ]
             ]
         ]);
     
@@ -295,6 +291,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($ean);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($baseprice);
+        $simpleGroup->addGroupField($baseprice2);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
 

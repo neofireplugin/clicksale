@@ -262,6 +262,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'salesPrice' => '1',
                             'lang' => 'de'
                         ]
+                    ]
                 ]
             ]
         ]);

@@ -240,7 +240,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'id' => null,
                     'salesPrice' => '1',
                     'currency' => 'EUR',
-
+                    'additional' =>
                     [
 
                         [

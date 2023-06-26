@@ -204,7 +204,17 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'Versandkosten',
             'shipping',
             'Versandkosten', // In a productive plugin this should be translated
-            true
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    
+                    'type' => "own-value",
+                    'value' => '0,00'
+                ]
+            ]
         ]);
 
 

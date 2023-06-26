@@ -239,37 +239,37 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'key' => "price",
                     'id' => null,
                     'salesPrice' => '1',
-                    'currency' => 'EUR'
+                    'currency' => 'EUR',
+                    
+                    [
+                        'type' => "own-value",
+                        'value' => ' € / '
+                    ],
+                    [
+    
+                        'isCombined' => 'true',
+                        'value' => '',
+                        'fieldId' => 'basePrice-amount',
+                        'type' => "base-price",
+                        'key' => "amount",
+                        'id' => null,
+                        'salesPrice' => '1'
+                    ],
+                    [
+    
+                        'isCombined' => 'true',
+                        'value' => '',
+                        'fieldId' => 'basePrice-unit-name',
+                        'type' => "base-price",
+                        'key' => "unit-name",
+                        'id' => null,
+                        'salesPrice' => '1',
+                        'lang' => 'de'        
+                    ]
                     
                     
-                    
-                ],
-                [
-                    
-                    'type' => "own-value",
-                    'value' => ' € / '
-                ],
-                [
-
-                    'isCombined' => 'true',
-                    'value' => '',
-                    'fieldId' => 'basePrice-amount',
-                    'type' => "base-price",
-                    'key' => "amount",
-                    'id' => null,
-                    'salesPrice' => '1'
-                ],
-                [
-
-                    'isCombined' => 'true',
-                    'value' => '',
-                    'fieldId' => 'basePrice-unit-name',
-                    'type' => "base-price",
-                    'key' => "unit-name",
-                    'id' => null,
-                    'salesPrice' => '1',
-                    'lang' => 'de'        
                 ]
+                
             ]
         ]);
     

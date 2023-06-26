@@ -100,7 +100,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'type' => "sales-price",
                     'key' => "salesPrice",
                     'currency' => "EUR",
-                    'salesPrice' => "1"
+                    'id' => "1"
                     
                     
                 ]
@@ -237,8 +237,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'fieldId' => 'basePrice-price',
                     'type' => "base-price",
                     'key' => "price",
-                    'id' => null,
-                    'salesPrice' => '1',
+                    'id' => '1',
                     'currency' => 'EUR',
                     'additionalSources' => [
                         [
@@ -250,16 +249,14 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'fieldId' => 'basePrice-amount',
                             'type' => "base-price",
                             'key' => "amount",
-                            'id' => null,
-                            'salesPrice' => '1'
+                            'id' => '1'
                         ],
                         [
                             'value' => '',
                             'fieldId' => 'basePrice-unit-name',
                             'type' => "base-price",
                             'key' => "unit-name",
-                            'id' => null,
-                            'salesPrice' => '1',
+                            'id' => '1',
                             'lang' => 'de'
                         ]
                     ]

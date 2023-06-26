@@ -82,7 +82,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ]
             ]
         ]);
-        
 
         /** @var SimpleTemplateField $price */
        $price = pluginApp(SimpleTemplateField::class, [
@@ -94,13 +93,16 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             false,
             [],
             [
-                [
-                    'fieldId' => 'salesPrice-1',
-                    'id' => 1,
+                [    
                     'isCombined' => false,
-                    'key' => "price",
+                    'value' => null,
+                    'fieldId' => 'salesPrice-salesPrice',
                     'type' => "sales-price",
-                    'value' => null
+                    'key' => "salesPrice",
+                    'currency' => "EUR",
+                    'salesPrice' => "1"
+                    
+                    
                 ]
             ]
         ]);

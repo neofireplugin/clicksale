@@ -241,7 +241,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'salesPrice' => '1',
                     'currency' => 'EUR',
 
-                    'additional' =>
+                    'additionalSources' =>
 
                     [
                         'type' => "own-value",

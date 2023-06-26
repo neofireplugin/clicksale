@@ -204,6 +204,15 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             'Versandkosten', // In a productive plugin this should be translated
             true
         ]);
+
+
+        {"key":"baseprice","sources":[{"isCombined":true,"value":null,"fieldId":"basePrice-price","type":"base-price","key":"price","id":null,"salesPrice":1,"currency":"EUR","additionalSources":[
+        
+        {"uuid":"7b9a990e-5254-4fe5-a380-6cc78e98373e","type":"own-value","value":"€ /"},
+
+        
+        {"uuid":"9fb0d185-c30e-4ceb-abc7-176b29a17c1d","value":null,"fieldId":"basePrice-amount","type":"base-price","key":"amount","id":null,"salesPrice":1},
+        {"uuid":"a70909d1-8bf1-45a1-b2e1-072bb0858a7a","value":null,"fieldId":"basePrice-unit-name","type":"base-price","key":"unit-name","id":null,"salesPrice":1,"lang":"de"}]}]}
         
         /** @var SimpleTemplateField $sku */
         $baseprice = pluginApp(SimpleTemplateField::class, [
@@ -216,12 +225,43 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'fieldId' => 'variation-mayShowUnitPrice',
+                    'isCombined' => 'true',
+                    'value' => '',
+                    'fieldId' => 'basePrice-price',
+                    'type' => "base-price",
+                    'key' => "price",
                     'id' => null,
-                    'isCombined' => false,
-                    'key' => "mayShowUnitPrice",
-                    'type' => "variation",
-                    'value' => ''
+                    'salesPrice' => '1',
+                    'currency' => 'EUR'
+                    
+                    
+                    
+                ],
+                [
+                    
+                    'type' => "own-value",
+                    'value' => ' € / '
+                ],
+                [
+
+                    'isCombined' => 'true',
+                    'value' => '',
+                    'fieldId' => 'basePrice-amount',
+                    'type' => "base-price",
+                    'key' => "amount",
+                    'id' => null,
+                    'salesPrice' => '1'
+                ],
+                [
+
+                    'isCombined' => 'true',
+                    'value' => '',
+                    'fieldId' => 'basePrice-unit-name',
+                    'type' => "base-price",
+                    'key' => "unit-name",
+                    'id' => null,
+                    'salesPrice' => '1',
+                    'lang' => 'de'        
                 ]
             ]
         ]);

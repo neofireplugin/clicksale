@@ -212,7 +212,9 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 [
                     
                     'type' => "own-value",
-                    'value' => '0,00'
+                    'value' => '0,00',
+                    'isCombined' => 'true',
+                    'id' => null
                 ]
             ]
         ]);

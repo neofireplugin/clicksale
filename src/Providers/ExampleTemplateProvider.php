@@ -229,14 +229,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             true,
             false,
             false,
-            [
-
-                [
-                    'type' => "own-value",
-                    'value' => ' € / '
-                ]
-                               
-            ],
+            [],
             [
                 [
                     'isCombined' => 'true',
@@ -247,7 +240,28 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'id' => null,
                     'salesPrice' => '1',
                     'currency' => 'EUR'
-                ]
+                ],
+                [
+                    'type' => "own-value",
+                    'value' => ' € / '
+                ],
+                [
+                    'value' => '',
+                    'fieldId' => 'basePrice-amount',
+                    'type' => "base-price",
+                    'key' => "amount",
+                    'id' => null,
+                    'salesPrice' => '1'
+                ],
+                [
+                    'value' => '',
+                    'fieldId' => 'basePrice-unit-name',
+                    'type' => "base-price",
+                    'key' => "unit-name",
+                    'id' => null,
+                    'salesPrice' => '1',
+                    'lang' => 'de'
+                ]    
             ]
         ]);
 

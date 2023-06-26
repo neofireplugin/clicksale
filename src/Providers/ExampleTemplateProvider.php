@@ -240,7 +240,9 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'id' => null,
                     'salesPrice' => '1',
                     'currency' => 'EUR',
-                    
+
+                    'additional' =>
+
                     [
                         'type' => "own-value",
                         'value' => ' € / '
@@ -266,9 +268,9 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                         'salesPrice' => '1',
                         'lang' => 'de'        
                     ]
-                    
-                    
+
                 ]
+                
                 
             ]
         ]);

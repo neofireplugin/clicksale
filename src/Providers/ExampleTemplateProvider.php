@@ -152,7 +152,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-
         /** @var SimpleTemplateField $link */
         $link = pluginApp(SimpleTemplateField::class, [
             'Produktlink',
@@ -168,8 +167,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'id' => null,
                     'isCombined' => false,
                     'key' => "url",
-                    'type' => "item",
-                    'value' => "webshop-url",
+                    'type' => "webshop-url",
+                    'value' => null,
                     'client' => null,
                     'lang' => "de",
                     'referrer' => null

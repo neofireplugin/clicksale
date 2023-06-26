@@ -239,7 +239,14 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'key' => "price",
                     'id' => null,
                     'salesPrice' => '1',
-                    'currency' => 'EUR'
+                    'currency' => 'EUR',
+                    'additional' => 
+                               
+                    [
+                        'type' => "own-value",
+                        'value' => 'check'
+                    ]
+                               
                 ],
                 [
                     'type' => "own-value",

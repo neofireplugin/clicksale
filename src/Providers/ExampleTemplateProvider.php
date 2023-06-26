@@ -232,7 +232,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'isCombined' => 'true',
+                    'isCombined' => 'false',
                     'value' => '',
                     'fieldId' => 'basePrice-price',
                     'type' => "base-price",
@@ -242,19 +242,16 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'currency' => 'EUR'
                     
 
-                ]
-                
-                
-            ],
-            [
+                ],
 
                 [
+                    'isCombined' => 'false',
                     'type' => "own-value",
                     'value' => ' € / '
                 ],
                 [
 
-                    'isCombined' => 'true',
+                    'isCombined' => 'false',
                     'value' => '',
                     'fieldId' => 'basePrice-amount',
                     'type' => "base-price",
@@ -264,7 +261,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ],
                 [
 
-                    'isCombined' => 'true',
+                    'isCombined' => 'false',
                     'value' => '',
                     'fieldId' => 'basePrice-unit-name',
                     'type' => "base-price",
@@ -273,6 +270,9 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'salesPrice' => '1',
                     'lang' => 'de'        
                 ]
+            
+                
+                
             ]
         ]);
     

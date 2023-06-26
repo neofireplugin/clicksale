@@ -232,7 +232,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'isCombined' => 'false',
+                    'isCombined' => 'true',
                     'value' => '',
                     'fieldId' => 'basePrice-price',
                     'type' => "base-price",
@@ -245,13 +245,13 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ],
 
                 [
-                    'isCombined' => 'false',
+                    'isCombined' => 'true',
                     'type' => "own-value",
                     'value' => ' € / '
                 ],
                 [
 
-                    'isCombined' => 'false',
+                    'isCombined' => 'true',
                     'value' => '',
                     'fieldId' => 'basePrice-amount',
                     'type' => "base-price",
@@ -261,7 +261,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ],
                 [
 
-                    'isCombined' => 'false',
+                    'isCombined' => 'true',
                     'value' => '',
                     'fieldId' => 'basePrice-unit-name',
                     'type' => "base-price",

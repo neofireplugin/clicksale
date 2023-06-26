@@ -229,7 +229,14 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             true,
             false,
             false,
-            [],
+            [
+
+                [
+                    'type' => "own-value",
+                    'value' => ' € / '
+                ]
+                               
+            ],
             [
                 [
                     'isCombined' => 'true',
@@ -244,22 +251,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-        /** @var SimpleTemplateField $sku */
-        $baseprice2 = pluginApp(SimpleTemplateField::class, [
-            'Grundpreis',
-            'baseprice',
-            'Grundpreis', // In a productive plugin this should be translated
-            true,
-            false,
-            false,
-            [],
-            [
-                [
-                    'type' => "own-value",
-                    'value' => ' € / '
-                ]
-            ]
-        ]);
+        
     
         /** @var SimpleTemplateField $stock */
         $stock = pluginApp(SimpleTemplateField::class, [
@@ -291,7 +283,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($ean);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($baseprice);
-        $simpleGroup->addGroupField($baseprice2);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
 

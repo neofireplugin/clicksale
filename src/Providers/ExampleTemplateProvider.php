@@ -166,7 +166,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [
                 [
                     'fieldId' => 'variation-webshopUrl',
-                    'id' => null,
+                    'id' => '1',
                     'isCombined' => false,
                     'key' => "url",
                     'type' => "webshop-url",

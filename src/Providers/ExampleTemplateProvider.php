@@ -338,10 +338,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         return true;
     }
 
-    public function getPostMutator(): CatalogMutatorContract
-    {
-        return pluginApp(ExamplePostMutator::class);
-    }
+    
 
     
 

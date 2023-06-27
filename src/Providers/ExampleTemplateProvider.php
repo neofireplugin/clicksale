@@ -4,7 +4,6 @@ namespace LenandoCatalogExport\Providers;
 
 use LenandoCatalogExport\Callbacks\ExampleSkuCallback;
 use LenandoCatalogExport\Converters\CSVResultConverter;
-use LenandoCatalogExport\Mutators\ExamplePostMutator;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
 use Plenty\Modules\Catalog\Containers\Filters\CatalogFilterBuilderContainer;
 use Plenty\Modules\Catalog\Containers\TemplateGroupContainer;

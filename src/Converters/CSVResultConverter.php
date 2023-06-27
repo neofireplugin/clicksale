@@ -74,7 +74,7 @@ class CSVResultConverter extends BaseResultConverter
                 return "\t";
             case 'comma':
             case null: // <-- Missing delimiter default is here
-                return ",";
+                return ";";
             default:
                 return $delimiter;
         }

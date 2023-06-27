@@ -130,7 +130,120 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-      
+        /** @var SimpleTemplateField $price */
+       $image2 = pluginApp(SimpleTemplateField::class, [
+           'Bildlink2',
+           'produktUrl',
+           'Bildlink2', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "1"
+                ]
+            ]
+        ]);
+
+        /** @var SimpleTemplateField $price */
+       $image3 = pluginApp(SimpleTemplateField::class, [
+           'Bildlink3',
+           'produktUrl',
+           'Bildlink3', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "2"
+                ]
+            ]
+        ]);
+
+        /** @var SimpleTemplateField $price */
+       $image4 = pluginApp(SimpleTemplateField::class, [
+           'Bildlink4',
+           'produktUrl',
+           'Bildlink4', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "3"
+                ]
+            ]
+        ]);
+
+      /** @var SimpleTemplateField $price */
+       $image5 = pluginApp(SimpleTemplateField::class, [
+           'Bildlink5',
+           'produktUrl',
+           'Bildlink5', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "4"
+                ]
+            ]
+        ]);
+
+        /** @var SimpleTemplateField $price */
+       $image6 = pluginApp(SimpleTemplateField::class, [
+           'Bildlink6',
+           'produktUrl',
+           'Bildlink6', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'image-variationImages-single',
+                    'id' => "variationImages",
+                    'isCombined' => false,
+                    'key' => "single",
+                    'type' => "variation-images",
+                    'value' => null,
+                    'imageEntity' => "url",
+                    'imagePosition' => "5"
+                ]
+            ]
+        ]);
         
         /** @var SimpleTemplateField $price */
        $manufacturer = pluginApp(SimpleTemplateField::class, [
@@ -290,6 +403,11 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
         $simpleGroup->addGroupField($image);
+        $simpleGroup->addGroupField($image2);
+        $simpleGroup->addGroupField($image3);
+        $simpleGroup->addGroupField($image4);
+        $simpleGroup->addGroupField($image5);
+        $simpleGroup->addGroupField($image6);
         $simpleGroup->addGroupField($manufacturer);
         $simpleGroup->addGroupField($link);
         $simpleGroup->addGroupField($ean);

@@ -124,7 +124,7 @@ class CSVResultConverter extends BaseResultConverter
      */
     public function getKey(): string
     {
-        return 'csv_schuhe24';
+        return 'csv_lenando';
     }
 
     /**
@@ -134,7 +134,7 @@ class CSVResultConverter extends BaseResultConverter
      */
     public function getLabel(): string
     {
-        return 'CSV (Schuhe24)';
+        return 'CSV (lenando)';
     }
 
     /**

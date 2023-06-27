@@ -12,7 +12,7 @@ use Plenty\Plugin\ServiceProvider;
  */
 class LenandoCatalogExportServiceProvider extends ServiceProvider
 {
-    const PLUGIN_NAME = "LenandoCatalogExport";
+    const PLUGIN_NAME = "lenando";
 
     public function register()
     {
@@ -21,6 +21,6 @@ class LenandoCatalogExportServiceProvider extends ServiceProvider
         /** @var TemplateContainerContract $templateContainer */
         $templateContainer = pluginApp(TemplateContainerContract::class);
 
-        $templateContainer->register("variationExport", self::PLUGIN_NAME, ExampleTemplateProvider::class, "vdi");
+        $templateContainer->register("lenando", self::PLUGIN_NAME, ExampleTemplateProvider::class, "vdi");
     }
 }

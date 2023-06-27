@@ -53,7 +53,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'fieldId' => 'itemText-name1',
                     'id' => null,
                     'isCombined' => false,
-                    'key' => "name1",
+                    'key' => "name",
                     'type' => "text",
                     'lang' => "de",
                     'value' => null

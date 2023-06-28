@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: ckunze
- * Date: 23/2/17
- * Time: 12:10
- */
 
 namespace lenando\Models;
 
@@ -62,7 +56,7 @@ class Settings extends Model
 
     const DEFAULT_LANGUAGE = "de";
 
-    const MODEL_NAMESPACE = 'Schuhe24\Models\Settings';
+    const MODEL_NAMESPACE = 'lenando\Models\Settings';
 
     const SETTINGS_DEFAULT_VALUES = array();
 
@@ -71,7 +65,7 @@ class Settings extends Model
      */
     public function getTableName(): string
     {
-        return 'Schuhe24::settings';
+        return 'lenando::settings';
     }
 }
 

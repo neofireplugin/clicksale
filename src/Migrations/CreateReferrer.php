@@ -20,8 +20,9 @@ class CreateReferrer
      *
      * @param SettingsService $settings
      */
-    public function __construct()
+    public function __construct(SettingsService $settingsService)
     {
+        $this->settings = $settingsService;
     }
 
     /**
@@ -61,7 +62,7 @@ class CreateReferrer
             $referrerId = $createdReferrer->id;
         }
 
-        #$this->settings->saveSetting("referrerId", $referrerId);
+        $this->settings->saveSetting("referrerId", $referrerId);
 
     }
 

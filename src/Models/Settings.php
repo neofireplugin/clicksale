@@ -6,7 +6,7 @@
  * Time: 12:10
  */
 
-namespace Schuhe24\Models;
+namespace lenando\Models;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Model;
 

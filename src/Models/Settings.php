@@ -51,7 +51,7 @@ class Settings extends Model
         "vn");
 
     const LANG_INDEPENDENT_SETTINGS = array(
-      "referrerId
+      "referrerId"
     );
 
     const DEFAULT_LANGUAGE = "de";

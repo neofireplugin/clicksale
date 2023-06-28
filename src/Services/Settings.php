@@ -1,5 +1,5 @@
 <?php
-namespace Schuhe24\Services;
+namespace lenando\Services;
 
 use Aws\CloudFront\Exception\Exception;
 use Plenty\Exceptions\ValidationException;
@@ -9,14 +9,9 @@ use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\System\Models\Webstore;
 use Plenty\Plugin\Application;
 use Plenty\Validation\Contracts\Attribute;
-use Schuhe24\Models\SizeAttributeSettings;
-use Schuhe24\Models\ColorAttributeSettings;
-use Schuhe24\Models\ManufacturerSettings;
-use Schuhe24\Models\StockSettings;
 use Schuhe24\Models\Settings;
 use Plenty\Modules\Frontend\Services\SystemService;
 use Schuhe24\Helpers\LogHelper;
-use Schuhe24\Models\WarehouseBranch;
 
 
 class SettingsService
@@ -97,12 +92,6 @@ class SettingsService
         /** @var Settings $settings */
         $settings = $this->loadClientSettings($plentyId, $lang);
 
-        $manufacturerSettings = $this->getManufacturerbyPlentyId();
-        $stockSettings = $this->getStockSettingsbyPlentyId();
-        $sizeAttributeSettings = $this->getSizeAttributeSettingsbyPlentyId();
-        $colorAttributeSettings = $this->getColorAttributeSettingsbyPlentyId();
-        $warehouseBranchSettings = $this->getWarehouseBranchesByPlentyId();
-
         if ($convertToArray && (count($settings) || count($manufacturerSettings) || count($stockSettings) || count($sizeAttributeSettings) || count($colorAttributeSettings))) {
             $outputArray = array();
 
@@ -121,11 +110,6 @@ class SettingsService
             $outputArray['lang'] = $settings[count($settings) - 1]->lang;
 
             $outputArray = $this->convertSettingsToCorrectFormat($outputArray, $availableSettings);
-            $outputArray['manufacturersExport'] = $manufacturerSettings;
-            $outputArray['stockFrom'] = $stockSettings;
-            $outputArray['sizeExportMultipleValues'] = $sizeAttributeSettings;
-            $outputArray['colorExportMultipleValues'] = $colorAttributeSettings;
-            $outputArray['warehouseBranches'] = $warehouseBranchSettings;
 
             $outputArray['type'] = "extended";
             return $outputArray;
@@ -190,134 +174,6 @@ class SettingsService
                 }
             }
 
-            if (isset($data['stockFrom'])) {
-                /** @var StockSettings $currentStockArray */
-                $currentStockArray = $this->getStockSettingsbyPlentyId();
-                if (!count($data['stockFrom']) && count($currentStockArray)) {
-                    $this->db->query(StockSettings::MODEL_NAMESPACE)
-                        ->where('plentyId', '=', $pid)->delete();
-                }
-                foreach ($data['stockFrom'] as $index => $stockId) {
-                    if (!in_array($stockId, $currentStockArray)) {
-                        /** @var StockSettings $StockSettings */
-                        $StockSettings = pluginApp(StockSettings::class);
-                        $StockSettings->plentyId = $pid;
-                        $StockSettings->stockId = $stockId;
-                        $this->db->save($StockSettings);
-                    }
-                }
-                foreach ($currentStockArray as $index => $stockId) {
-                    if (!in_array($stockId, $data['stockFrom'])) {
-                        $this->db->query(StockSettings::MODEL_NAMESPACE)
-                            ->where('plentyId', '=', $pid)
-                            ->where('stockId', '=', $stockId)->delete();
-                    }
-                }
-            }
-
-            if (isset($data['manufacturersExport'])) {
-                /** @var ManufacturerSettings $currentManufacturerArray */
-                $currentManufacturerArray = $this->getManufacturerbyPlentyId();
-                if (!count($data['stockFrom']) && count($currentManufacturerArray)) {
-                    $this->db->query(StockSettings::MODEL_NAMESPACE)
-                        ->where('plentyId', '=', $pid)->delete();
-                }
-                foreach ($data['manufacturersExport'] as $index => $stockId) {
-                    if (!in_array($stockId, $currentManufacturerArray)) {
-                        /** @var ManufacturerSettings $manufacturerSettings */
-                        $manufacturerSettings = pluginApp(ManufacturerSettings::class);
-                        $manufacturerSettings->plentyId = $pid;
-                        $manufacturerSettings->manufacturerId = $stockId;
-                        $this->db->save($manufacturerSettings);
-                    }
-                }
-                foreach ($currentManufacturerArray as $index => $manufacturerId) {
-                    if (!in_array($manufacturerId, $data['stockFrom'])) {
-                        $this->db->query(ManufacturerSettings::MODEL_NAMESPACE)
-                            ->where('plentyId', '=', $pid)
-                            ->where('manufacturerId', '=', $manufacturerId)->delete();
-                    }
-                }
-            }
-
-            if (isset($data['sizeExportMultipleValues'])) {
-                $sizeAttributeSettings = $this->getSizeAttributeSettingsbyPlentyId();
-                if (!count($data['sizeExportMultipleValues']) && count($sizeAttributeSettings)) {
-                    $this->db->query(SizeAttributeSettings::MODEL_NAMESPACE)
-                        ->where('plentyId', '=', $pid)->delete();
-                }
-                foreach ($data['sizeExportMultipleValues'] as $index => $attributeId) {
-                    /** in_array($attributeId, $sizeAttributeSettings) */
-                    if (!in_array($attributeId, $sizeAttributeSettings)) {
-                        /** @var SizeAttributeSettings $sizeAttributeSettingsObject */
-                        $sizeAttributeSettingsObject = pluginApp(SizeAttributeSettings::class);
-                        $sizeAttributeSettingsObject->plentyId = $pid;
-                        $sizeAttributeSettingsObject->attributeId = $attributeId;
-                        $this->db->save($sizeAttributeSettingsObject);
-                    }
-                }
-                foreach ($sizeAttributeSettings as $index => $attributeId) {
-                    if (!in_array($attributeId, $data['sizeExportMultipleValues'])) {
-                        $this->db->query(SizeAttributeSettings::MODEL_NAMESPACE)
-                            ->where('plentyId', '=', $pid)
-                            ->where('attributeId', '=', $attributeId)->delete();
-                    }
-                }
-            }
-
-            if (isset($data['colorExportMultipleValues'])) {
-                /** @var SizeAttributeSettings $sizeAttributeSettings */
-                $colorAttributeSettings = $this->getColorAttributeSettingsbyPlentyId();
-                if (!count($data['colorExportMultipleValues']) && count($colorAttributeSettings)) {
-                    $this->db->query(ColorAttributeSettings::MODEL_NAMESPACE)
-                        ->where('plentyId', '=', $pid)->delete();
-                }
-                foreach ($data['colorExportMultipleValues'] as $index => $attributeId) {
-                    /** !in_array($attributeId, $colorAttributeSettings) */
-                    if (!in_array($attributeId, $colorAttributeSettings)) {
-                        /** @var ColorAttributeSettings $colorAttributeSettings */
-                        $colorAttributeSettings = pluginApp(ColorAttributeSettings::class);
-                        $colorAttributeSettings->plentyId = $pid;
-                        $colorAttributeSettings->attributeId = $attributeId;
-                        $this->db->save($colorAttributeSettings);
-                    }
-                }
-                foreach ($colorAttributeSettings as $index => $attributeId) {
-                    if (!in_array($attributeId, $data['colorExportMultipleValues'])) {
-                        $this->db->query(ColorAttributeSettings::MODEL_NAMESPACE)
-                            ->where('plentyId', '=', $pid)
-                            ->where('attributeId', '=', $attributeId)->delete();
-                    }
-                }
-            }
-
-            if (isset($data['warehouseBranches']) && !empty($data['warehouseBranches'])) {
-                /** @var WarehouseBranch $currentWarehouseBranchArray */
-                $currentWarehouseBranchArray = $this->getWarehouseBranchesByPlentyId();
-                if (!count($data['warehouseBranches']) && count($currentWarehouseBranchArray)) {
-                    $this->db->query(WarehouseBranch::MODEL_NAMESPACE)
-                        ->where('plentyId', '=', $pid)->delete();
-                }
-                foreach ($data['warehouseBranches'] as $warehouseId => $branchId) {
-                    if (!in_array($stockId, $currentWarehouseBranchArray) && !is_null($branchId)) {
-                        /** @var WarehouseBranch $warehouseBranch */
-                        $warehouseBranch = pluginApp(WarehouseBranch::class);
-                        $warehouseBranch->plentyId = $pid;
-                        $warehouseBranch->warehouseId = $warehouseId;
-                        $warehouseBranch->branchId = $branchId;
-
-                        $this->db->save($warehouseBranch);
-                    }
-                }
-                foreach ($currentWarehouseBranchArray as $index => $branchId) {
-                    if (!in_array($branchId, $data['warehouseBranches'])) {
-                        $this->db->query(WarehouseBranch::MODEL_NAMESPACE)
-                            ->where('plentyId', '=', $pid)
-                            ->where('branchId', '=', $branchId)->delete();
-                    }
-                }
-            }
-
             return 1;
         }
 
@@ -348,14 +204,6 @@ class SettingsService
     {
         $this->db->query(Settings::MODEL_NAMESPACE)
             ->where("plentyId", '=', $plentyId)->delete();
-        $this->db->query(StockSettings::MODEL_NAMESPACE)
-            ->where('plentyId', '=', $plentyId)->delete();
-        $this->db->query(ManufacturerSettings::MODEL_NAMESPACE)
-            ->where('plentyId', '=', $plentyId)->delete();
-        $this->db->query(SizeAttributeSettings::MODEL_NAMESPACE)
-            ->where('plentyId', '=', $plentyId)->delete();
-        $this->db->query(ColorAttributeSettings::MODEL_NAMESPACE)
-            ->where('plentyId', '=', $plentyId)->delete();
     }
 
     /**
@@ -724,92 +572,6 @@ class SettingsService
      *
      * @return mixed
      */
-    public function getManufacturerbyPlentyId()
-    {
-        /** @var Query $query */
-        $query = $this->db->query(ManufacturerSettings::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-        /** @var ManufacturerSettings $manufacturerSettings */
-        $manufacturerSettings = $query->get();
-        $manufacturerSettingsArray = [];
-        foreach ($manufacturerSettings as $manufacturerSetting) {
-            $manufacturerSettingsArray[] = (int)$manufacturerSetting->manufacturerId;
-        }
-        return $manufacturerSettingsArray;
-    }
-
-    public function getStockSettingsbyPlentyId()
-    {
-        /** @var Query $query */
-        $query = $this->db->query(StockSettings::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-        /** @var StockSettings[] $stockSettings */
-        $stockSettings = $query->get();
-        $stockSettingsArray = [];
-        foreach ($stockSettings as $stockSetting) {
-            $stockSettingsArray[] = (int)$stockSetting->stockId;
-        }
-        return $stockSettingsArray;
-    }
-
-    public function getWarehouseBranchesByPlentyId()
-    {
-
-        /** @var Query $query */
-        $query = $this->db->query(WarehouseBranch::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-        /** @var WarehouseBranch[] $warehouseBranch */
-        $warehouseBranches = $query->get();
-        $warehouseBranchSettingsArray = [];
-        foreach ($warehouseBranches as $warehouseBranchSetting) {
-            $warehouseBranchSettingsArray[(int)$warehouseBranchSetting->warehouseId] = (int)$warehouseBranchSetting->branchId;
-        }
-        return $warehouseBranchSettingsArray;
-    }
-
-    public function getWarehouseIdByBranchId($branchId)
-    {
-
-        /** @var Query $query */
-        $query = $this->db->query(WarehouseBranch::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId())->where("branchId", "=", $branchId);
-        /** @var WarehouseBranch[] $warehouseBranch */
-        $warehouseBranches = $query->get();
-        foreach ($warehouseBranches as $warehouseBranchSetting) {
-            if ($warehouseBranchSetting->branchId == $branchId) {
-                return $warehouseBranchSetting->warehouseId;
-            }
-        }
-        return false;
-    }
-
-    public function getSizeAttributeSettingsbyPlentyId()
-    {
-        /** @var Query $query */
-        $query = $this->db->query(SizeAttributeSettings::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-        /** @var SizeAttributeSettings[] $sizeAttributeSettings */
-        $sizeAttributeSettings = $query->get();
-        $sizeAttributeSettingsArray = [];
-        foreach ($sizeAttributeSettings as $sizeSetting) {
-            $sizeAttributeSettingsArray[] = (int)$sizeSetting->attributeId;
-        }
-        return (array)$sizeAttributeSettingsArray;
-    }
-
-    public function getColorAttributeSettingsbyPlentyId()
-    {
-        /** @var Query $query */
-        $query = $this->db->query(ColorAttributeSettings::MODEL_NAMESPACE);
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-        /** @var ColorAttributeSettings[] $colorAttributeSettings */
-        $colorAttributeSettings = $query->get();
-        $colorAttributeSettingsArray = [];
-        foreach ($colorAttributeSettings as $colorSetting) {
-            $colorAttributeSettingsArray[] = (int)$colorSetting->attributeId;
-        }
-        return $colorAttributeSettingsArray;
-    }
 
     /**
      * Load the current activated shipping countries
@@ -822,29 +584,5 @@ class SettingsService
 
         return $this->getShippingCountriesByPlentyId();
     }
-
-    /**
-     * Load the activated shipping countries for plentyId
-     *
-     * @return mixed
-     */
-    public function getShippingCountriesByPlentyId()
-    {
-
-        /** @var Query $query */
-        $query = $this->db->query("Schuhe24\Models\ShippingCountryModel");
-        $query->where('plentyId', '=', $this->app->getPlentyId());
-
-        /** @var ShippingCountrySettings[] $shippingCountrySettings */
-        $shippingCountrySettings = $query->get();
-
-        $shippingCountriesArray = [];
-        foreach ($shippingCountrySettings as $shippingSetting) {
-            $shippingCountriesArray[] = (int)$shippingSetting->shippingCountryId;
-        }
-
-        return $shippingCountriesArray;
-    }
-
 
 }

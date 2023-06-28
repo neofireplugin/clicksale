@@ -39,7 +39,7 @@ class CreateReferrer
         $result = $orderReferrer->getList();
         foreach ($result as $referrer) {
 
-            if($referrer["name"] == "Lenando") {
+            if($referrer["name"] == "lenando") {
                 $referrerId = $referrer["id"];
 
           
@@ -52,10 +52,10 @@ class CreateReferrer
 
             $referrerSettings = [
                 "isEditable" => true,
-                "backendName" => "Lenando",
-                "name" => "Lenando",
+                "backendName" => "lenando",
+                "name" => "lenando",
                 "isFilterable" => true,
-                "origin" => "Lenando",
+                "origin" => "lenando",
                 "showInLeads" => false
             ];
             $createdReferrer = $orderReferrer->create($referrerSettings);

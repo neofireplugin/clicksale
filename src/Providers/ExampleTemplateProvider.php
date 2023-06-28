@@ -110,7 +110,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $images = pluginApp(SimpleTemplateField::class, [
            'Bilder',
-           'produktUrl1',
+           'produktUrl',
            'Bilder', // In a productive plugin this should be translated
             true,
             false,

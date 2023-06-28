@@ -108,7 +108,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 
         
         /** @var SimpleTemplateField $price */
-       $image = pluginApp(SimpleTemplateField::class, [
+       $image_a = pluginApp(SimpleTemplateField::class, [
            'Bildlink',
            'produktUrl',
            'Bildlink', // In a productive plugin this should be translated
@@ -131,7 +131,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-       $image2 = pluginApp(SimpleTemplateField::class, [
+       $image_b = pluginApp(SimpleTemplateField::class, [
            'Bildlink2',
            'produktUrl',
            'Bildlink2', // In a productive plugin this should be translated
@@ -154,7 +154,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-       $image3 = pluginApp(SimpleTemplateField::class, [
+       $image_c = pluginApp(SimpleTemplateField::class, [
            'Bildlink3',
            'produktUrl',
            'Bildlink3', // In a productive plugin this should be translated
@@ -177,7 +177,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-       $image4 = pluginApp(SimpleTemplateField::class, [
+       $image_d = pluginApp(SimpleTemplateField::class, [
            'Bildlink4',
            'produktUrl',
            'Bildlink4', // In a productive plugin this should be translated
@@ -200,7 +200,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
       /** @var SimpleTemplateField $price */
-       $image5 = pluginApp(SimpleTemplateField::class, [
+       $image_e = pluginApp(SimpleTemplateField::class, [
            'Bildlink5',
            'produktUrl',
            'Bildlink5', // In a productive plugin this should be translated
@@ -223,7 +223,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-       $image6 = pluginApp(SimpleTemplateField::class, [
+       $image_f = pluginApp(SimpleTemplateField::class, [
            'Bildlink6',
            'produktUrl',
            'Bildlink6', // In a productive plugin this should be translated
@@ -402,12 +402,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
-        $simpleGroup->addGroupField($image);
-        $simpleGroup->addGroupField($image2);
-        $simpleGroup->addGroupField($image3);
-        $simpleGroup->addGroupField($image4);
-        $simpleGroup->addGroupField($image5);
-        $simpleGroup->addGroupField($image6);
+        $simpleGroup->addGroupField($image_a);
+        $simpleGroup->addGroupField($image_b);
+        $simpleGroup->addGroupField($image_c);
+        $simpleGroup->addGroupField($image_d);
+        $simpleGroup->addGroupField($image_e);
+        $simpleGroup->addGroupField($image_f);
         $simpleGroup->addGroupField($manufacturer);
         $simpleGroup->addGroupField($link);
         $simpleGroup->addGroupField($ean);

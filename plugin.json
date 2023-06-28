@@ -20,6 +20,7 @@
   "serviceProvider": "BasicCatalogExport\\BasicCatalogExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
+    "lenando\\Migrations\\CreateSettings",
     "lenando\\Migrations\\CreateReferrer",
   ]
 }

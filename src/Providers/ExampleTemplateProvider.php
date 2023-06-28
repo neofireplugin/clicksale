@@ -110,7 +110,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $image_a = pluginApp(SimpleTemplateField::class, [
            'Bildlink',
-           'produktUrl',
+           'produktUrl1',
            'Bildlink', // In a productive plugin this should be translated
             true,
             false,
@@ -133,7 +133,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $image_b = pluginApp(SimpleTemplateField::class, [
            'Bildlink2',
-           'produktUrl',
+           'produktUrl2',
            'Bildlink2', // In a productive plugin this should be translated
             true,
             false,
@@ -156,7 +156,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $image_c = pluginApp(SimpleTemplateField::class, [
            'Bildlink3',
-           'produktUrl',
+           'produktUrl3',
            'Bildlink3', // In a productive plugin this should be translated
             true,
             false,
@@ -179,7 +179,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $image_d = pluginApp(SimpleTemplateField::class, [
            'Bildlink4',
-           'produktUrl',
+           'produktUrl4',
            'Bildlink4', // In a productive plugin this should be translated
             true,
             false,
@@ -202,7 +202,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
       /** @var SimpleTemplateField $price */
        $image_e = pluginApp(SimpleTemplateField::class, [
            'Bildlink5',
-           'produktUrl',
+           'produktUrl5',
            'Bildlink5', // In a productive plugin this should be translated
             true,
             false,
@@ -225,7 +225,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $price */
        $image_f = pluginApp(SimpleTemplateField::class, [
            'Bildlink6',
-           'produktUrl',
+           'produktUrl6',
            'Bildlink6', // In a productive plugin this should be translated
             true,
             false,

@@ -19,5 +19,7 @@
   "type": "general",
   "serviceProvider": "BasicCatalogExport\\BasicCatalogExportServiceProvider",
   "dependencies": {},
-  "runOnBuild": []
+  "runOnBuild": [
+    "lenando\\Migrations\\CreateReferrer",
+  ]
 }

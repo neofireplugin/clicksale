@@ -2,7 +2,7 @@
 
 namespace LenandoCatalogExport\Mutators;
 
-use Avocado\Helpers\LogHelper;
+use LenandoCatalogExport\Helpers\LogHelper;
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
 
 class imageMutator implements CatalogMutatorContract

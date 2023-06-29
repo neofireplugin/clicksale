@@ -2,6 +2,7 @@
 
 namespace LenandoCatalogExport\Providers;
 
+use LenandoCatalogExport\Mutators\imageMutator;
 use LenandoCatalogExport\Callbacks\ExampleSkuCallback;
 use LenandoCatalogExport\Converters\CSVResultConverter;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
@@ -60,7 +61,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
         
-        /** @var SimpleTemplateField $name */
+        /** @var SimpleTemplateField $description */
         $description = pluginApp(SimpleTemplateField::class, [
             'Beschreibung',
             'description',
@@ -107,7 +108,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         
-        /** @var SimpleTemplateField $price */
+        /** @var SimpleTemplateField $images */
        $images = pluginApp(SimpleTemplateField::class, [
            'Bilder',
            'produktUrl',
@@ -131,10 +132,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         
-        /** @var SimpleTemplateField $price */
+        /** @var SimpleTemplateField $manufacturer */
        $manufacturer = pluginApp(SimpleTemplateField::class, [
            'Hersteller',
-           'manufactuerer',
+           'manufacturer',
            'Hersteller', // In a productive plugin this should be translated
             true,
             false,
@@ -176,7 +177,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
         
-        /** @var SimpleTemplateField $sku */
+        /** @var SimpleTemplateField $ean */
         $ean = pluginApp(SimpleTemplateField::class, [
             'EAN',
             'barcode',
@@ -197,7 +198,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
         
-        /** @var SimpleTemplateField $sku */
+        /** @var SimpleTemplateField $shipping */
         $shipping = pluginApp(SimpleTemplateField::class, [
             'Versandkosten',
             'shipping',
@@ -219,7 +220,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 
 
       
-        /** @var SimpleTemplateField $sku */
+        /** @var SimpleTemplateField $baseprice */
         $baseprice = pluginApp(SimpleTemplateField::class, [
             'Grundpreis',
             'baseprice',
@@ -336,8 +337,13 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         return true;
     }
 
-    
 
+    public function getPostMutator(): CatalogMutatorContract
+    {
+
+        return pluginApp(imageMutator::class);
+
+    }
     
 
     public function DefaultResultConverterContainer(): ResultConverterContainer

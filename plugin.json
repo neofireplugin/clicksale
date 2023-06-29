@@ -17,10 +17,13 @@
   ],
   "price": 0.00,
   "type": "general",
-  "serviceProvider": "BasicCatalogExport\\BasicCatalogExportServiceProvider",
+  "serviceProvider": "LenandoCatalogExport\\LenandoCatalogExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "lenando\\Migrations\\CreateSettings",
-    "lenando\\Migrations\\CreateReferrer",
-  ]
+    "LenandoCatalogExport\\Migrations\\CreateSettings",
+    "LenandoCatalogExport\\Migrations\\CreateReferrer"
+  ],
+  "platform": {
+    "php": ">=7.3,<8.1"
+  }
 }

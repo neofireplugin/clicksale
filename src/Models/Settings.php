@@ -27,7 +27,7 @@ class Settings extends Model
     public $updatedAt = '';
 
     const AVAILABLE_SETTINGS = array(
-      "referrerId" => float
+      "referrerId" => "float"
     );
 
     const AVAILABLE_LANGUAGES = array("de",
@@ -56,7 +56,7 @@ class Settings extends Model
 
     const DEFAULT_LANGUAGE = "de";
 
-    const MODEL_NAMESPACE = 'lenando\Models\Settings';
+    const MODEL_NAMESPACE = 'LenandoCatalogExport\Models\Settings';
 
     const SETTINGS_DEFAULT_VALUES = array();
 

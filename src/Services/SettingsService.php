@@ -1,5 +1,5 @@
 <?php
-namespace lenando\Services;
+namespace LenandoCatalogExport\Services;
 
 use Aws\CloudFront\Exception\Exception;
 use Plenty\Exceptions\ValidationException;
@@ -9,9 +9,9 @@ use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\System\Models\Webstore;
 use Plenty\Plugin\Application;
 use Plenty\Validation\Contracts\Attribute;
-use Schuhe24\Models\Settings;
+use LenandoCatalogExport\Models\Settings;
 use Plenty\Modules\Frontend\Services\SystemService;
-use Schuhe24\Helpers\LogHelper;
+use LenandoCatalogExport\Helpers\LogHelper;
 
 
 class SettingsService

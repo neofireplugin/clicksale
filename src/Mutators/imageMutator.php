@@ -14,11 +14,11 @@ class imageMutator implements CatalogMutatorContract
         /** @var LogHelper $logHelper */
         $logHelper = pluginApp(LogHelper::class);
 
-        if(is_array($item["images"])) {
-        $item["images"] = implode(",", $item["images"]);
+        if(is_array($item["Bilder"])) {
+        $item["Bilder"] = implode(",", $item["Bilder"]);
         }
 
-        $item["link"] = $item["link"]."?referrerId=122";
+        $item["Produktlink"] = $item["Produktlink"]."?referrerId=122";
 
         return $item;
     }

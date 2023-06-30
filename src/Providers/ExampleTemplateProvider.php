@@ -119,14 +119,25 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'fieldId' => 'image-variationImages-single',
+                    'fieldId' => 'image-variationImages-list',
                     'id' => "variationImages",
-                    'isCombined' => false,
-                    'key' => "single",
+                    'isCombined' => true,
+                    'key' => "list",
                     'type' => "variation-images",
                     'value' => null,
                     'imageEntity' => "url",
-                    'imagePosition' => "0"
+                    'imageCount' => "10",
+                    'additionalSources' => [
+                        [
+                            'fieldId' => 'image-itemImages-list',
+                            'id' => "itemImages",
+                            'key' => "list",
+                            'type' => "variation-images",
+                            'value' => null,
+                            'imageEntity' => "url",
+                            'imageCount' => "10"
+                        ]
+                    ]     
                 ]
             ]
         ]);

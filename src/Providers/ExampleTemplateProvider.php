@@ -132,7 +132,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'fieldId' => 'image-itemImages-list',
                             'id' => "itemImages",
                             'key' => "list",
-                            'type' => "variation-images",
+                            'type' => "item-images",
                             'value' => null,
                             'imageEntity' => "url",
                             'imageCount' => "10"

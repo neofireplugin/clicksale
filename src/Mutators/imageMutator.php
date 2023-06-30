@@ -4,6 +4,7 @@ namespace LenandoCatalogExport\Mutators;
 
 use LenandoCatalogExport\Helpers\LogHelper;
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
+use LenandoCatalogExport\Services\SettingsService;
 
 class imageMutator implements CatalogMutatorContract
 {

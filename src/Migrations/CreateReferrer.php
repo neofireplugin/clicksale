@@ -1,6 +1,6 @@
 <?php
 
-namespace Lenando\Migrations;
+namespace LenandoCatalogExport\Migrations;
 
 use Plenty\Modules\Order\Referrer\Contracts\OrderReferrerRepositoryContract;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;

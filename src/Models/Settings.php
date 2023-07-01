@@ -65,7 +65,7 @@ class Settings extends Model
      */
     public function getTableName(): string
     {
-        return 'lenando::settings';
+        return 'LenandoCatalogExport::settings';
     }
 }
 

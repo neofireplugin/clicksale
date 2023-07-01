@@ -6,11 +6,11 @@
  * Time: 15:54
  */
 
-namespace lenando\Migrations;
+namespace LenandoCatalogExport\Migrations;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
-use lenando\Models\Settings;
-use lenando\Services\SettingsService;
+use LenandoCatalogExport\Models\Settings;
+use LenandoCatalogExport\Services\SettingsService;
 
 class CreateSettings
 {

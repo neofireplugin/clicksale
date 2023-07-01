@@ -1,6 +1,6 @@
 <?php
 
-namespace lenando\Models;
+namespace LenandoCatalogExport\Models;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Model;
 

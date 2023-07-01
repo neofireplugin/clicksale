@@ -9,6 +9,9 @@ use Plenty\Plugin\Routing\Router as WebRouter;
 class LenandoCatalogExportRouteServiceProvider extends RouteServiceProvider
 {
     public function map(ApiRouter $api, WebRouter $webRouter) {
+
+        $router->get('migration', 'LenandoCatalogExport\Migrations\Settings@run');
+        
         $api->version(['v1'], ['middleware' => ['oauth']], function ($router) {
             $router->get('example/export', ['uses' => 'LenandoCatalogExport\Controllers\VariationExportController@export']);
         });

@@ -1,5 +1,5 @@
 {
-  "version": "0.0.5",
+  "version": "0.0.6",
   "name": "lenando",
   "description": "lenando Plugin",
   "namespace": "LenandoCatalogExport",
@@ -20,7 +20,7 @@
   "serviceProvider": "LenandoCatalogExport\\LenandoCatalogExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "LenandoCatalogExport\\Migrations\\CreateSettings",
+    "LenandoCatalogExport\\Migrations\\CreateSettings_new",
     "LenandoCatalogExport\\Migrations\\CreateReferrer"
   ],
   "platform": {

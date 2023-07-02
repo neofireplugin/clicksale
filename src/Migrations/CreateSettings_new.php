@@ -12,7 +12,7 @@ use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
 use LenandoCatalogExport\Models\Settings;
 use LenandoCatalogExport\Services\SettingsService;
 
-class CreateSettings
+class CreateSettings_new
 {
 
     public function run(Migrate $migrate)

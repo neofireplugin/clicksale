@@ -21,7 +21,7 @@
   "dependencies": {},
   "runOnBuild": [
     "LenandoCatalogExport\\Migrations\\CreateSettings_new",
-    "LenandoCatalogExport\\Migrations\\CreateReferrer"
+    "LenandoCatalogExport\\Migrations\\CreateReferrer_new"
   ],
   "platform": {
     "php": ">=7.3,<8.1"

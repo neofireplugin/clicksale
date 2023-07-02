@@ -51,7 +51,7 @@ class CreateReferrer
         if(empty($referrerId)) {
 
             $referrerSettings = [
-                "isEditable" => true,
+                "isEditable" => false,
                 "backendName" => "lenando",
                 "name" => "lenando",
                 "isFilterable" => true,

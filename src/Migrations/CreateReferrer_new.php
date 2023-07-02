@@ -8,7 +8,7 @@ use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
 /**
  * Class CreatePaymentMethod
  */
-class CreateReferrer
+class CreateReferrer_new
 {
     /**
      * @var SettingsService

@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoCatalogExport\Helpers;
+namespace LenandoExport\Helpers;
 
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Log\Loggable;

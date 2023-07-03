@@ -20,8 +20,8 @@
   "serviceProvider": "LenandoExport\\LenandoExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "LenandoExport\\Migrations\\CreateSettings_new",
-    "LenandoExport\\Migrations\\CreateReferrer_new"
+    "LenandoExport\\Migrations\\CreateSettings",
+    "LenandoExport\\Migrations\\CreateReferrer"
   ],
   "platform": {
     "php": ">=7.3,<8.1"

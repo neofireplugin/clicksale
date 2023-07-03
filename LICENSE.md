@@ -1,4 +1,4 @@
-plentymarkets plugin LenandoCatalogExport
+plentymarkets plugin LenandoExport
 
 Copyright © 2023 neofire
 

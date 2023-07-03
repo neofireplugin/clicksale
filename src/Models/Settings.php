@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoCatalogExport\Models;
+namespace LenandoExport\Models;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Model;
 
@@ -56,7 +56,7 @@ class Settings extends Model
 
     const DEFAULT_LANGUAGE = "de";
 
-    const MODEL_NAMESPACE = 'LenandoCatalogExport\Models\Settings';
+    const MODEL_NAMESPACE = 'LenandoExport\Models\Settings';
 
     const SETTINGS_DEFAULT_VALUES = array();
 
@@ -65,7 +65,7 @@ class Settings extends Model
      */
     public function getTableName(): string
     {
-        return 'LenandoCatalogExport::settings';
+        return 'LenandoExport::settings';
     }
 }
 

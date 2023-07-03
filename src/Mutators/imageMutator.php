@@ -5,6 +5,7 @@ namespace LenandoCatalogExport\Mutators;
 use LenandoCatalogExport\Helpers\LogHelper;
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
 use LenandoCatalogExport\Services\SettingsService;
+use Plenty\Modules\Order\Referrer\Contracts\OrderReferrerRepositoryContract;
 
 class imageMutator implements CatalogMutatorContract
 {
@@ -27,8 +28,16 @@ class imageMutator implements CatalogMutatorContract
         $item["Bilder"] = implode(",", $item["Bilder"]);
         }
 
-        $item["Produktlink"] = $item["Produktlink"]."?referrerId=".$this->settings->getSetting("referrerId");
+        $orderReferrer = pluginApp(OrderReferrerRepositoryContract::class);
+        $lenandoReferrer = $orderReferrer->findWhere(['backendName' => 'lenando']);
 
+        if (!empty($lenandoReferrers)) {
+            $item["Produktlink"] = $item["Produktlink"]."?referrerId=".$lenandoReferrers[0]->id;
+        }else{
+            $item["Produktlink"] = '';
+        }
+
+        
         return $item;
     }
 }

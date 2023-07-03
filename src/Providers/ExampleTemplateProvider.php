@@ -1,10 +1,10 @@
 <?php
 
-namespace LenandoCatalogExport\Providers;
+namespace LenandoExport\Providers;
 
-use LenandoCatalogExport\Mutators\imageMutator;
-use LenandoCatalogExport\Callbacks\ExampleSkuCallback;
-use LenandoCatalogExport\Converters\CSVResultConverter;
+use LenandoExport\Mutators\imageMutator;
+use LenandoExport\Callbacks\ExampleSkuCallback;
+use LenandoExport\Converters\CSVResultConverter;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
 use Plenty\Modules\Catalog\Containers\Filters\CatalogFilterBuilderContainer;
 use Plenty\Modules\Catalog\Containers\TemplateGroupContainer;
@@ -16,12 +16,12 @@ use Plenty\Modules\Catalog\Models\TemplateGroup;
 use Plenty\Modules\Catalog\Templates\Providers\AbstractGroupedTemplateProvider;
 use Plenty\Modules\Pim\Catalog\Variation\Filters\FilterBuilderFactory;
 use Plenty\Modules\Catalog\Contracts\CatalogDynamicConfigContract;
-use LenandoCatalogExport\DynamicConfig\ExampleDynamicConfig;
+use LenandoExport\DynamicConfig\ExampleDynamicConfig;
 use Plenty\Modules\Catalog\Services\Converter\Containers\ResultConverterContainer;
 
 /**
  * Class ExampleTemplateProvider
- * @package LenandoCatalogExport\Providers
+ * @package LenandoExport\Providers
  */
 class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 {

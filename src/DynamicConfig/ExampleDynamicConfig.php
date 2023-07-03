@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoCatalogExport\DynamicConfig;
+namespace LenandoExport\DynamicConfig;
 
 use Plenty\Modules\Catalog\Contracts\CatalogDynamicConfigContract;
 use Plenty\Modules\Catalog\Contracts\CatalogExportServiceContract;
@@ -9,7 +9,7 @@ use Plenty\Modules\Catalog\Models\Catalog;
 
 /**
  * Class ExampleDynamicConfig
- * @package LenandoCatalogExport\DynamicConfig
+ * @package LenandoExport\DynamicConfig
  */
 class ExampleDynamicConfig implements CatalogDynamicConfigContract
 {

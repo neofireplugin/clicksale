@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoCatalogExport\Callbacks;
+namespace LenandoExport\Callbacks;
 
 use Plenty\Modules\Catalog\Contracts\CatalogTemplateFieldCallableContract;
 

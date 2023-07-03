@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoCatalogExport\Providers;
+namespace LenandoExport\Providers;
 
 use Plenty\Modules\Catalog\Containers\CatalogMappingValueContainer;
 use Plenty\Modules\Catalog\Contracts\CatalogMappingValueProviderContract;

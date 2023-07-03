@@ -1,8 +1,8 @@
 {
-  "version": "0.0.7",
+  "version": "0.0.1",
   "name": "lenando",
   "description": "lenando Plugin",
-  "namespace": "LenandoCatalogExport",
+  "namespace": "LenandoExport",
   "pluginIcon": "icon_plugin_xs.png",
   "author": "neofire Deutschland",
   "email": "info@neofire.de",
@@ -17,11 +17,11 @@
   ],
   "price": 0.00,
   "type": "general",
-  "serviceProvider": "LenandoCatalogExport\\LenandoCatalogExportServiceProvider",
+  "serviceProvider": "LenandoExport\\LenandoExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "LenandoCatalogExport\\Migrations\\CreateSettings_new",
-    "LenandoCatalogExport\\Migrations\\CreateReferrer_new"
+    "LenandoExport\\Migrations\\CreateSettings_new",
+    "LenandoExport\\Migrations\\CreateReferrer_new"
   ],
   "platform": {
     "php": ">=7.3,<8.1"

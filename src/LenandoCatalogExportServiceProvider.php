@@ -1,22 +1,22 @@
 <?php
 
-namespace LenandoCatalogExport;
+namespace LenandoExport;
 
-use LenandoCatalogExport\Providers\ExampleTemplateProvider;
+use LenandoExport\Providers\ExampleTemplateProvider;
 use Plenty\Modules\Catalog\Contracts\TemplateContainerContract;
 use Plenty\Plugin\ServiceProvider;
 
 /**
- * Class LenandoCatalogExportServiceProvider
- * @package LenandoCatalogExport\Providers
+ * Class LenandoExportServiceProvider
+ * @package LenandoExport\Providers
  */
-class LenandoCatalogExportServiceProvider extends ServiceProvider
+class LenandoExportServiceProvider extends ServiceProvider
 {
     const PLUGIN_NAME = "lenando";
 
     public function register()
     {
-        $this->getApplication()->register(LenandoCatalogExportRouteServiceProvider::class);
+        $this->getApplication()->register(LenandoExportRouteServiceProvider::class);
 
         /** @var TemplateContainerContract $templateContainer */
         $templateContainer = pluginApp(TemplateContainerContract::class);

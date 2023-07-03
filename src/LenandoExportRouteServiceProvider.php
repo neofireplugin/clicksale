@@ -10,10 +10,10 @@ class LenandoExportRouteServiceProvider extends RouteServiceProvider
 {
     public function map(ApiRouter $api, WebRouter $webRouter) {
 
-        $webRouter->get('migration', 'LenandoCatalogExport\Migrations\CreateSettings@run');
+        $webRouter->get('migration', 'LenandoExport\Migrations\CreateSettings@run');
         
         $api->version(['v1'], ['middleware' => ['oauth']], function ($router) {
-            $router->get('example/export', ['uses' => 'LenandoCatalogExport\Controllers\VariationExportController@export']);
+            $router->get('example/export', ['uses' => 'LenandoExport\Controllers\VariationExportController@export']);
         });
     }
 }

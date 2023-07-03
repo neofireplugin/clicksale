@@ -1,10 +1,10 @@
 <?php
 
-namespace LenandoCatalogExport\Mutators;
+namespace LenandoExport\Mutators;
 
-use LenandoCatalogExport\Helpers\LogHelper;
+use LenandoExport\Helpers\LogHelper;
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
-use LenandoCatalogExport\Services\SettingsService;
+use LenandoExport\Services\SettingsService;
 
 class imageMutator implements CatalogMutatorContract
 {

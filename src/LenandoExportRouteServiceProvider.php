@@ -1,12 +1,12 @@
 <?php
 
-namespace LenandoCatalogExport;
+namespace LenandoExport;
 
 use Plenty\Plugin\RouteServiceProvider;
 use Plenty\Plugin\Routing\ApiRouter;
 use Plenty\Plugin\Routing\Router as WebRouter;
 
-class LenandoCatalogExportRouteServiceProvider extends RouteServiceProvider
+class LenandoExportRouteServiceProvider extends RouteServiceProvider
 {
     public function map(ApiRouter $api, WebRouter $webRouter) {
 

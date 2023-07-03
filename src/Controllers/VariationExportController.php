@@ -1,8 +1,8 @@
 <?php
 
-namespace LenandoCatalogExport\Controllers;
+namespace LenandoExport\Controllers;
 
-use LenandoCatalogExport\LenandoCatalogExportServiceProvider;
+use LenandoExport\LenandoExportServiceProvider;
 use Plenty\Modules\Catalog\Contracts\CatalogExportRepositoryContract;
 use Plenty\Modules\Catalog\Contracts\CatalogRepositoryContract;
 use Plenty\Plugin\Controller;
@@ -15,7 +15,7 @@ class VariationExportController extends Controller
         $catalogRepository = pluginApp(CatalogRepositoryContract::class);
         $catalogRepository->setFilters(
             [
-                'type' => LenandoCatalogExportServiceProvider::PLUGIN_NAME,
+                'type' => LenandoExportServiceProvider::PLUGIN_NAME,
                 'active' => true
             ]
         );

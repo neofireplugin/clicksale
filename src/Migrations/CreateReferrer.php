@@ -4,6 +4,7 @@ namespace LenandoExport\Migrations;
 
 use Plenty\Modules\Order\Referrer\Contracts\OrderReferrerRepositoryContract;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
+use LenandoExport\Services\SettingsService;
 
 /**
  * Class CreatePaymentMethod

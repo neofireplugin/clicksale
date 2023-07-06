@@ -37,7 +37,7 @@ class CSVResultConverter extends BaseResultConverter
         /** @var LogHelper $logHelper */
         $logHelper = pluginApp(LogHelper::class);
         $delimiter = ';';
-        $enclosure = $this->getCSVEnclosure();
+        $enclosure = '"';
         $hasHeader = Arr::get($this->settings, static::OPTIONS_PATH . '.headerRowIncluded', true);
 
         $array = $collection->toArray();

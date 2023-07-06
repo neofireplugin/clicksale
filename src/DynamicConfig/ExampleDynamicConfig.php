@@ -25,8 +25,8 @@ class ExampleDynamicConfig implements CatalogDynamicConfigContract
     ) {
 
         // We could add new filters
-        //$filterContainer = $template->getFilterContainer();
-        //$filterContainer->addFilterBuilder();
+        $filterContainer = $template->getFilterContainer();
+        $filterContainer->addFilterBuilder();
 
         // In a real scenario we will probably have some conditions here
 

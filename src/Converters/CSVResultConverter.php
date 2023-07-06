@@ -36,7 +36,7 @@ class CSVResultConverter extends BaseResultConverter
 
         /** @var LogHelper $logHelper */
         $logHelper = pluginApp(LogHelper::class);
-        $delimiter = $this->getCSVDelimiter();
+        $delimiter = ';';
         $enclosure = $this->getCSVEnclosure();
         $hasHeader = Arr::get($this->settings, static::OPTIONS_PATH . '.headerRowIncluded', true);
 
@@ -49,7 +49,9 @@ class CSVResultConverter extends BaseResultConverter
                     // Reminder: This will malfunction if the first row has a different number of columns
                     $hasHeader = false;
                 }
+                
                 $resourceHandler->writeCSV($row, ',', '"');
+            
             }
         });
 

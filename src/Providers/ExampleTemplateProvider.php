@@ -287,10 +287,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             [],
             [
                 [
-                    'fieldId' => 'stock-0-physical',
+                    'fieldId' => 'stock-0-netto',
                     'id' => '0',
                     'isCombined' => false,
-                    'key' => 'stockPhysical',
+                    'key' => 'stockNet',
                     'type' => 'stock',
                     'value' => '0'
                 ]

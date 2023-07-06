@@ -30,7 +30,7 @@ class imageMutator implements CatalogMutatorContract
         $item["Produktlink"] = $item["Produktlink"]."?ReferrerID=".$this->settings->getSetting("referrerId");
 
         if($item["Bestand"] == '0'){
-            unset($item);
+            $item = array();
         }
         return $item;
     }

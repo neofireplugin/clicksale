@@ -27,7 +27,7 @@ class imageMutator implements CatalogMutatorContract
         $item["Bilder"] = implode(",", $item["Bilder"]);
         }
 
-        $item["Produktlink"] = $item["Produktlink"]."?referrerId=".$this->settings->getSetting("referrerId");
+        $item["Produktlink"] = $item["Produktlink"]."?ReferrerID=".$this->settings->getSetting("referrerId");
 
         return $item;
     }

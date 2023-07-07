@@ -334,10 +334,11 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $container = pluginApp(CatalogFilterBuilderContainer::class);
         /** @var FilterBuilderFactory $filterBuilderFactory */
         $filterBuilderFactory = pluginApp(FilterBuilderFactory::class);
-
-        $itemHasIdsFilter = $filterBuilderFactory->itemHasAtLeastOneId();
-        $container->addFilterBuilder($itemHasIdsFilter);
-
+    
+        $container->addFilterBuilder($filterBuilderFactory->variationIsVisibleForMarkets());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsVisibleForAtLeastOneMarket());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasAtLeastOneTag());
+    
         return $container;
     }
 

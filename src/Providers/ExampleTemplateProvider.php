@@ -334,10 +334,38 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $container = pluginApp(CatalogFilterBuilderContainer::class);
         /** @var FilterBuilderFactory $filterBuilderFactory */
         $filterBuilderFactory = pluginApp(FilterBuilderFactory::class);
-    
-        $container->addFilterBuilder($filterBuilderFactory->variationIsVisibleForMarkets());
+
+        $container->addFilterBuilder($filterBuilderFactory->VariationHasAtLeastOneAvailability());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasAtLeastOneBundleType());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsInAtLeastOneCategory());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsInCategories());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasAtLeastOneClient());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasClients());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasImage());
+        $container->addFilterBuilder($filterBuilderFactory->itemBelongsToAtLeastOneAmazonFlatFile());
+        $container->addFilterBuilder($filterBuilderFactory->itemCreatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->itemHasAtLeastOneFlagOne());
+        $container->addFilterBuilder($filterBuilderFactory->itemHasAtLeastOneFlagTwo());
+        $container->addFilterBuilder($filterBuilderFactory->itemHasAtLeastOneId());
+        $container->addFilterBuilder($filterBuilderFactory->itemIsType());
+        $container->addFilterBuilder($filterBuilderFactory->itemUpdatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->itemHasAtLeastOneManufacturer());
         $container->addFilterBuilder($filterBuilderFactory->variationIsVisibleForAtLeastOneMarket());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsVisibleForMarkets());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasAtLeastOnePropertySelection());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasPropertySelections());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasSku());
         $container->addFilterBuilder($filterBuilderFactory->variationHasAtLeastOneTag());
+        $container->addFilterBuilder($filterBuilderFactory->variationHasTags());
+        $container->addFilterBuilder($filterBuilderFactory->variationCreatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsActive());
+        $container->addFilterBuilder($filterBuilderFactory->variationIsMain());
+        $container->addFilterBuilder($filterBuilderFactory->variationUpdatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->variationRelatedUpdatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->salesPriceUpdatedAt());
+        $container->addFilterBuilder($filterBuilderFactory->stockUpdatedAt());
+        
+        
     
         return $container;
     }

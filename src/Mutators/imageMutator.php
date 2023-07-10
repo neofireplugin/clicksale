@@ -23,9 +23,14 @@ class imageMutator implements CatalogMutatorContract
         /** @var LogHelper $logHelper */
         $logHelper = pluginApp(LogHelper::class);
 
+        $string = "";
         if(is_array($item["Bildlink"])) {
-        $item["Bildlink"] = implode("|", $item["Bildlink"]);
+            foreach ($item["Bildlink"] as $link) {
+                $string .= $link . ",";
+            }
+            $string = rtrim($string, ",");
         }
+        $item["Bildlink"] = $string;
 
         $item["Produktlink"] = $item["Produktlink"]."?ReferrerID=".$this->settings->getSetting("referrerId");
         

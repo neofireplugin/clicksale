@@ -164,6 +164,30 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $energyclass */
+       $energyclass = pluginApp(SimpleTemplateField::class, [
+           'Energieklasse',
+           'energyclass',
+           'Energieklasse', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            []
+        ]);
+
+        /** @var SimpleTemplateField $energylable */
+       $energylable = pluginApp(SimpleTemplateField::class, [
+           'Energielabel',
+           'energylable',
+           'Energielabel', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            []
+        ]);
+
         /** @var SimpleTemplateField $link */
         $link = pluginApp(SimpleTemplateField::class, [
             'Produktlink',
@@ -301,6 +325,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
         $simpleGroup->addGroupField($images);
+        $simpleGroup->addGroupField($energyclass);
+        $simpleGroup->addGroupField($energylable);
         $simpleGroup->addGroupField($manufacturer);
         $simpleGroup->addGroupField($link);
         $simpleGroup->addGroupField($ean);

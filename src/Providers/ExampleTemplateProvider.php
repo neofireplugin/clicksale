@@ -169,7 +169,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'Energieklasse',
            'energyclass',
            'Energieklasse', // In a productive plugin this should be translated
-            true,
+            false,
             false,
             false,
             [],
@@ -181,7 +181,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'Energielabel',
            'energylable',
            'Energielabel', // In a productive plugin this should be translated
-            true,
+            false,
             false,
             false,
             [],

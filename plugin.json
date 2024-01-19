@@ -1,15 +1,15 @@
 {
   "version": "0.0.1",
-  "name": "LenandoExport",
-  "description": "lenando Plugin",
-  "namespace": "LenandoExport",
+  "name": "ClicksaleExport",
+  "description": "clicksale Plugin",
+  "namespace": "ClicksaleExport",
   "pluginIcon": "icon_plugin_xs.png",
   "author": "neofire Deutschland",
   "email": "info@neofire.de",
   "authorIcon": "icon_author_xs.png",
   "shortDescription": {
-    "de": "Plugin für den Artikelexport zu lenando",
-    "en": "Plugin to Export the Items to lenando"
+    "de": "Plugin für den Artikelexport zu clicksale",
+    "en": "Plugin to Export the Items to clicksale"
   },
   "license": "AGPL-3.0",
   "categories": [
@@ -17,11 +17,11 @@
   ],
   "price": 0.00,
   "type": "general",
-  "serviceProvider": "LenandoExport\\LenandoExportServiceProvider",
+  "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "LenandoExport\\Migrations\\CreateSettingsTable",
-    "LenandoExport\\Migrations\\CreateReferrer"
+    "ClicksaleExport\\Migrations\\CreateSettingsTable",
+    "ClicksaleExport\\Migrations\\CreateReferrer"
   ],
   "platform": {
     "php": ">=7.3,<8.1"

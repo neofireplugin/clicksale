@@ -110,7 +110,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         /** @var SimpleTemplateField $id */
         $id = pluginApp(SimpleTemplateField::class, [
             'ID',
-            'name',
+            'id',
             'ID', // In a productive plugin this should be translated
             true,
             false,
@@ -130,10 +130,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
        
-        /** @var SimpleTemplateField $id */
+        /** @var SimpleTemplateField $number */
         $number = pluginApp(SimpleTemplateField::class, [
             'Artikelnummer',
-            'name',
+            'number',
             'Artikelnummer', // In a productive plugin this should be translated
             true,
             false,

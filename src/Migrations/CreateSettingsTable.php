@@ -6,11 +6,11 @@
  * Time: 15:54
  */
 
-namespace LenandoExport\Migrations;
+namespace ClicksaleExport\Migrations;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
-use LenandoExport\Models\Settings;
-use LenandoExport\Services\SettingsService;
+use ClicksaleExport\Models\Settings;
+use ClicksaleExport\Services\SettingsService;
 
 class CreateSettingsTable
 {

@@ -107,6 +107,27 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $id */
+        $id = pluginApp(SimpleTemplateField::class, [
+            'ID',
+            'name',
+            'ID', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'variation-id',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "id",
+                    'type' => "variation",
+                    'fieldType' => "float",
+                    'value' => null
+                ]
+            ]
+        ]);
         
         /** @var SimpleTemplateField $images */
        $images = pluginApp(SimpleTemplateField::class, [

@@ -1,26 +1,26 @@
 <?php
 
-namespace LenandoExport;
+namespace ClicksaleExport;
 
-use LenandoExport\Providers\ExampleTemplateProvider;
+use ClicksaleExport\Providers\ExampleTemplateProvider;
 use Plenty\Modules\Catalog\Contracts\TemplateContainerContract;
 use Plenty\Plugin\ServiceProvider;
 
 /**
- * Class LenandoExportServiceProvider
- * @package LenandoExport\Providers
+ * Class ClicksaleExportServiceProvider
+ * @package ClicksaleExport\Providers
  */
-class LenandoExportServiceProvider extends ServiceProvider
+class ClicksaleExportServiceProvider extends ServiceProvider
 {
-    const PLUGIN_NAME = "lenando";
+    const PLUGIN_NAME = "clicksale";
 
     public function register()
     {
-        $this->getApplication()->register(LenandoExportRouteServiceProvider::class);
+        $this->getApplication()->register(ClicksaleExportRouteServiceProvider::class);
 
         /** @var TemplateContainerContract $templateContainer */
         $templateContainer = pluginApp(TemplateContainerContract::class);
 
-        $templateContainer->register("lenando", self::PLUGIN_NAME, ExampleTemplateProvider::class, "vdi");
+        $templateContainer->register("clicksale", self::PLUGIN_NAME, ExampleTemplateProvider::class, "vdi");
     }
 }

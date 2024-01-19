@@ -1,4 +1,4 @@
-plentymarkets plugin LenandoExport
+plentymarkets plugin ClicksaleExport
 
 Copyright © 2023 neofire
 
@@ -11,7 +11,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU Affero General Public License for more details.
 
-„lenando“ is a registered trademark of lenando.
+„clicksale“ is a registered trademark of clicksale.
 The licensing of the program under the AGPLv3 does not imply a
 trademark license. Therefore any rights, titles and interests in the
 above trademarks remain entirely with the trademark owners.

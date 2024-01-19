@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoExport\Converters;
+namespace ClicksaleExport\Converters;
 
 use Illuminate\Support\Arr;
 use Plenty\Modules\Catalog\Contracts\UI\UIOptionsContract;
@@ -8,7 +8,7 @@ use Plenty\Modules\Catalog\Services\Collections\CatalogLazyCollection;
 use Plenty\Modules\Catalog\Services\Converter\ResultConverters\BaseResultConverter;
 use Plenty\Modules\Catalog\Services\FileHandlers\ResourceHandler;
 use Plenty\Modules\Catalog\Services\UI\Options\UIOptions;
-use LenandoExport\Helpers\LogHelper;
+use ClicksaleExport\Helpers\LogHelper;
 #use Plenty\Modules\Catalog\Services\Converter\ResultConverters\Defaults\Options\DelimiterOption;
 #use Plenty\Modules\Catalog\Services\Converter\ResultConverters\Defaults\Options\EnclosureOption;
 #use Plenty\Modules\Catalog\Services\Converter\ResultConverters\Defaults\Options\HeaderRowOption;
@@ -126,7 +126,7 @@ class CSVResultConverter extends BaseResultConverter
      */
     public function getKey(): string
     {
-        return 'csv_lenando';
+        return 'csv_clicksale';
     }
 
     /**
@@ -136,7 +136,7 @@ class CSVResultConverter extends BaseResultConverter
      */
     public function getLabel(): string
     {
-        return 'CSV (lenando)';
+        return 'CSV (clicksale)';
     }
 
     /**

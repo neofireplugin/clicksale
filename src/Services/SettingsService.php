@@ -1,5 +1,5 @@
 <?php
-namespace LenandoExport\Services;
+namespace ClicksaleExport\Services;
 
 use Aws\CloudFront\Exception\Exception;
 use Plenty\Exceptions\ValidationException;
@@ -9,9 +9,9 @@ use Plenty\Modules\System\Contracts\WebstoreRepositoryContract;
 use Plenty\Modules\System\Models\Webstore;
 use Plenty\Plugin\Application;
 use Plenty\Validation\Contracts\Attribute;
-use LenandoExport\Models\Settings;
+use ClicksaleExport\Models\Settings;
 use Plenty\Modules\Frontend\Services\SystemService;
-use LenandoExport\Helpers\LogHelper;
+use ClicksaleExport\Helpers\LogHelper;
 
 
 class SettingsService

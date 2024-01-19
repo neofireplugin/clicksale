@@ -128,6 +128,29 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 ]
             ]
         ]);
+
+       
+        /** @var SimpleTemplateField $id */
+        $number = pluginApp(SimpleTemplateField::class, [
+            'Artikelnummer',
+            'name',
+            'Artikelnummer', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'variation-number',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "number",
+                    'type' => "variation",
+                    'fieldType' => "string",
+                    'value' => null
+                ]
+            ]
+        ]);
         
         /** @var SimpleTemplateField $images */
        $images = pluginApp(SimpleTemplateField::class, [
@@ -345,6 +368,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
+        $simpleGroup->addGroupField($id);
+        $simpleGroup->addGroupField($number);
         $simpleGroup->addGroupField($images);
         $simpleGroup->addGroupField($energyclass);
         $simpleGroup->addGroupField($energylable);

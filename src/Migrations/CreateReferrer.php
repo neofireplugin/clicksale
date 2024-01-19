@@ -1,10 +1,10 @@
 <?php
 
-namespace LenandoExport\Migrations;
+namespace ClicksaleExport\Migrations;
 
 use Plenty\Modules\Order\Referrer\Contracts\OrderReferrerRepositoryContract;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
-use LenandoExport\Services\SettingsService;
+use ClicksaleExport\Services\SettingsService;
 
 /**
  * Class CreatePaymentMethod
@@ -40,7 +40,7 @@ class CreateReferrer
         $result = $orderReferrer->getList();
         foreach ($result as $referrer) {
 
-            if($referrer["name"] == "lenando") {
+            if($referrer["name"] == "clicksale") {
                 $referrerId = $referrer["id"];
 
           
@@ -53,10 +53,10 @@ class CreateReferrer
 
             $referrerSettings = [
                 "isEditable" => false,
-                "backendName" => "lenando",
-                "name" => "lenando",
+                "backendName" => "clicksale",
+                "name" => "clicksale",
                 "isFilterable" => true,
-                "origin" => "lenando",
+                "origin" => "clicksale",
                 "showInLeads" => false
             ];
             $createdReferrer = $orderReferrer->create($referrerSettings);

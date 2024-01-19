@@ -1,6 +1,6 @@
 <?php
 
-namespace LenandoExport\Helpers;
+namespace ClicksaleExport\Helpers;
 
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Log\Loggable;

@@ -365,6 +365,18 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $energyclass */
+       $property = pluginApp(SimpleTemplateField::class, [
+           'Eigenschaften',
+           'property',
+           'Eigenschaften', // In a productive plugin this should be translated
+            false,
+            false,
+            false,
+            [],
+            []
+        ]);
+
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
@@ -380,6 +392,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($baseprice);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
+        $simpleGroup->addGroupField($property);
 
         $templateGroupContainer->addGroup($simpleGroup);
 

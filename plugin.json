@@ -1,7 +1,8 @@
 {
   "version": "1.0.0",
   "name": "ClicksaleExport",
-  "description": "clicksale Plugin",
+  "marketplaceName": {"de": "clicksale Plugin","en": "clicksale Plugin"},
+  "description": "Bieten Sie Ihre Artikel mit clicksale im stationären Handel sowie bei Partner an! Integrieren Sie mühelos clicksale als zusätzlichen Vertriebskanal.",
   "namespace": "ClicksaleExport",
   "pluginIcon": "icon_plugin_xs.png",
   "author": "neofire Deutschland",

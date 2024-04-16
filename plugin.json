@@ -24,6 +24,6 @@
     "ClicksaleExport\\Migrations\\CreateReferrer"
   ],
   "platform": {
-    "php": ">=7.3,<8.1"
+    "php": ">=8.0,<8.1"
   }
 }

@@ -8,7 +8,7 @@
   "email": "info@neofire.de",
   "phone": "+49 571 40 41 733",
   "keywords": ["marktplatz", "marketing", "export", "neofire", "clicksale"],
-  "serviceProvider": "ElasticExportlenandoDE\\ElasticExportlenandoDEServiceProvider",
+  "serviceProvider": "LenandoExport\\ClicksaleExportServiceProvider",
   "license": "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007",
   "pluginIcon": "icon_plugin_md.png",
   "price": 0.00,

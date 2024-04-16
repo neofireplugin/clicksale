@@ -1,6 +1,5 @@
 {
   "version": "1.0.0",
-  "marketplaceName": {"de": "clicksale Plugin","en": "clicksale Plugin"},
   "name": "ClicksaleExport",
   "description": "Bieten Sie Ihre Artikel mit clicksale im stationären Handel sowie bei Partner an! Integrieren Sie mühelos clicksale als zusätzlichen Vertriebskanal.",
   "namespace": "ClicksaleExport",

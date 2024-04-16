@@ -1,24 +1,29 @@
 {
-  "version": "1.0.0",
   "name": "ClicksaleExport",
-  "marketplaceName": {"de": "clicksale Plugin","en": "clicksale Plugin"},
   "description": "Bieten Sie Ihre Artikel mit clicksale im stationären Handel sowie bei Partner an! Integrieren Sie mühelos clicksale als zusätzlichen Vertriebskanal.",
   "namespace": "ClicksaleExport",
-  "pluginIcon": "icon_plugin_xs.png",
   "author": "neofire Deutschland",
-  "email": "info@neofire.de",
-  "authorIcon": "icon_author_xs.png",
-  "shortDescription": {
-    "de": "Plugin für den Artikelexport zu clicksale",
-    "en": "Plugin to Export the Items to clicksale"
-  },
-  "license": "AGPL-3.0",
-  "categories": [
-    3881
-  ],
-  "price": 0.00,
   "type": "general",
+  "authorIcon": "icon_author_xs.png",
+  "email": "info@neofire.de",
+  "phone": "+49 571 40 41 733",
+  "keywords": ["marktplatz", "marketing", "export", "neofire", "clicksale"],
   "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
+  "license": "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007",
+  "pluginIcon": "icon_plugin_md.png",
+  "price": 0.00,
+  "shortDescription": {
+    "de": "Bieten Sie Ihre Artikel mit clicksale im stationären Handel sowie bei Partner an! Integrieren Sie mühelos clicksale als zusätzlichen Vertriebskanal.",
+    "en": "Offer your items with clicksale in stationary stores and with partners! Easily integrate clicksale as an additional sales channel."
+  },
+  "categories": [
+    "3881"
+  ],
+  "version": "1.0.0",
+  "marketplaceName": {
+    "de":"clicksale Plugin",
+    "en":"clicksale Plugin"
+  }
   "dependencies": {},
   "runOnBuild": [
     "ClicksaleExport\\Migrations\\CreateSettingsTable",

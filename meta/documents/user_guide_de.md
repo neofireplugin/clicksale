@@ -1,1 +1,1 @@
-<h2><b>Möchtest Du gerne Deine Produkte bei Partnern oder im stationären Handel anbinden?</b></h2>Unser Plugin ermöglicht einen kompletten Abgleich mit plentymarkets von Deinen Produkten, Katalogen, Herstellern, Lieferzeiten, Units sowie Produktvariationen.
+<h2><b>Möchtest Du gerne Deine Produkte bei Partnern oder im stationären Handel anbieten?</b></h2>Unser Plugin ermöglicht einen kompletten Abgleich mit plentymarkets von Deinen Produkten, Katalogen, Herstellern, Lieferzeiten, Units sowie Produktvariationen.

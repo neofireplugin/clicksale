@@ -8,9 +8,6 @@
     },
     "require": {},
     "isClosedSource": false,
-    "categories": [
-      3881
-    ],
     "shortDescription": {
       "de": "Plugin für den Artikelexport zu clicksale",
       "en": "Plugin to Export the Items to clicksale"

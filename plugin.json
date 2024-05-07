@@ -3,9 +3,6 @@
     "namespace": "ClicksaleExport",
     "type": "general",
     "version": "1.0.0",
-    "require": {
-        "RequiredPlugin": "~1.0.0"
-    },
     "platform": {
         "php": ">=8.0 <8.1"
     },

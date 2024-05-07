@@ -1,29 +1,34 @@
 {
-  "version": "1.0.0",
-  "name": "ClicksaleExport",
-  "description": "clicksale Plugin",
-  "namespace": "ClicksaleExport",
-  "pluginIcon": "icon_plugin_xs.png",
-  "author": "neofire Deutschland",
-  "email": "info@neofire.de",
-  "authorIcon": "icon_author_xs.png",
-  "shortDescription": {
-    "de": "Plugin für den Artikelexport zu clicksale",
-    "en": "Plugin to Export the Items to clicksale"
-  },
-  "license": "AGPL-3.0",
-  "categories": [
-    3881
-  ],
-  "price": 0.00,
-  "type": "general",
-  "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
-  "dependencies": {},
-  "runOnBuild": [
-    "ClicksaleExport\\Migrations\\CreateSettingsTable",
-    "ClicksaleExport\\Migrations\\CreateReferrer"
-  ],
-  "platform": {
-    "php": ">=8.0,<8.1"
-  }
+    "name": "ClicksaleExport",
+    "namespace": "ClicksaleExport",
+    "type": "general",
+    "version": "1.0.0",
+    "require": {
+        "RequiredPlugin": "~1.0.0"
+    },
+    "platform": {
+        "php": ">=8.0 <8.1"
+    },
+    "isClosedSource": false,
+    "categories": [
+      3881
+    ],
+    "shortDescription": {
+      "de": "Plugin für den Artikelexport zu clicksale",
+      "en": "Plugin to Export the Items to clicksale"
+    },
+    "license": "AGPL-3.0",
+    "price": 0.00,
+    "description": "Plugin für den Artikelexport zu clicksale",
+    "author": "neofire Deutschland",
+    "email": "info@neofire.de",
+    "phone": "049-571-4041733",
+    "authorIcon": "icon_author_xs.png",
+    "pluginIcon": "icon_plugin_xs.png",
+    "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
+    "dependencies": {},
+    "runOnBuild": [
+        "ClicksaleExport\\Migrations\\CreateSettingsTable",
+        "ClicksaleExport\\Migrations\\CreateReferrer"
+    ]
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace ClicksaleExport\Providers;
+namespace ClicksalePLugin\Providers;
 
-use ClicksaleExport\Mutators\imageMutator;
-use ClicksaleExport\Callbacks\ExampleSkuCallback;
-use ClicksaleExport\Converters\CSVResultConverter;
+use ClicksalePLugin\Mutators\imageMutator;
+use ClicksalePLugin\Callbacks\ExampleSkuCallback;
+use ClicksalePLugin\Converters\CSVResultConverter;
 use Plenty\Modules\Catalog\Containers\CatalogTemplateFieldContainer;
 use Plenty\Modules\Catalog\Containers\Filters\CatalogFilterBuilderContainer;
 use Plenty\Modules\Catalog\Containers\TemplateGroupContainer;
@@ -16,12 +16,12 @@ use Plenty\Modules\Catalog\Models\TemplateGroup;
 use Plenty\Modules\Catalog\Templates\Providers\AbstractGroupedTemplateProvider;
 use Plenty\Modules\Pim\Catalog\Variation\Filters\FilterBuilderFactory;
 use Plenty\Modules\Catalog\Contracts\CatalogDynamicConfigContract;
-use ClicksaleExport\DynamicConfig\ExampleDynamicConfig;
+use ClicksalePLugin\DynamicConfig\ExampleDynamicConfig;
 use Plenty\Modules\Catalog\Services\Converter\Containers\ResultConverterContainer;
 
 /**
  * Class ExampleTemplateProvider
- * @package ClicksaleExport\Providers
+ * @package ClicksalePLugin\Providers
  */
 class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 {

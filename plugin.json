@@ -1,8 +1,8 @@
 {
   "version": "1.0.0",
-  "name": "ClicksaleExport",
+  "name": "ClicksalePLugin",
   "description": "clicksale Plugin",
-  "namespace": "ClicksaleExport",
+  "namespace": "ClicksalePLugin",
   "pluginIcon": "icon_plugin_xs.png",
   "author": "neofire Deutschland",
   "email": "info@neofire.de",
@@ -17,11 +17,11 @@
   ],
   "price": 0.00,
   "type": "general",
-  "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
+  "serviceProvider": "ClicksalePLugin\\ClicksalePLuginServiceProvider",
   "dependencies": {},
   "runOnBuild": [
-    "ClicksaleExport\\Migrations\\CreateSettingsTable",
-    "ClicksaleExport\\Migrations\\CreateReferrer"
+    "ClicksalePLugin\\Migrations\\CreateSettingsTable",
+    "ClicksalePLugin\\Migrations\\CreateReferrer"
   ],
   "platform": {
     "php": ">=7.3 <8.1"

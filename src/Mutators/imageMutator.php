@@ -1,10 +1,10 @@
 <?php
 
-namespace ClicksaleExport\Mutators;
+namespace ClicksalePLugin\Mutators;
 
-use ClicksaleExport\Helpers\LogHelper;
+use ClicksalePLugin\Helpers\LogHelper;
 use Plenty\Modules\Catalog\Contracts\CatalogMutatorContract;
-use ClicksaleExport\Services\SettingsService;
+use ClicksalePLugin\Services\SettingsService;
 
 class imageMutator implements CatalogMutatorContract
 {

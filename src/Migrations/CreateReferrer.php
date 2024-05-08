@@ -1,10 +1,10 @@
 <?php
 
-namespace ClicksaleExport\Migrations;
+namespace ClicksalePLugin\Migrations;
 
 use Plenty\Modules\Order\Referrer\Contracts\OrderReferrerRepositoryContract;
 use Plenty\Modules\Payment\Method\Contracts\PaymentMethodRepositoryContract;
-use ClicksaleExport\Services\SettingsService;
+use ClicksalePLugin\Services\SettingsService;
 
 /**
  * Class CreatePaymentMethod

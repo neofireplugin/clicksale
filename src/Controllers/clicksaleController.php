@@ -1,8 +1,8 @@
 <?php
 
-namespace ClicksaleExport\Controllers;
+namespace ClicksalePLugin\Controllers;
 
-use ClicksaleExport\ClicksaleExportServiceProvider;
+use ClicksalePLugin\ClicksalePLuginServiceProvider;
 use Plenty\Modules\Catalog\Contracts\CatalogExportRepositoryContract;
 use Plenty\Modules\Catalog\Contracts\CatalogRepositoryContract;
 use Plenty\Plugin\Controller;
@@ -15,7 +15,7 @@ class clicksaleController extends Controller
         $catalogRepository = pluginApp(CatalogRepositoryContract::class);
         $catalogRepository->setFilters(
             [
-                'type' => ClicksaleExportServiceProvider::PLUGIN_NAME,
+                'type' => ClicksalePLuginServiceProvider::PLUGIN_NAME,
                 'active' => true
             ]
         );

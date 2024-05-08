@@ -1,6 +1,6 @@
 <?php
 
-namespace ClicksaleExport\Helpers;
+namespace ClicksalePLugin\Helpers;
 
 use Plenty\Plugin\ConfigRepository;
 use Plenty\Plugin\Log\Loggable;

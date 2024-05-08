@@ -1,22 +1,22 @@
 <?php
 
-namespace ClicksaleExport;
+namespace ClicksalePLugin;
 
-use ClicksaleExport\Providers\ExampleTemplateProvider;
+use ClicksalePLugin\Providers\ExampleTemplateProvider;
 use Plenty\Modules\Catalog\Contracts\TemplateContainerContract;
 use Plenty\Plugin\ServiceProvider;
 
 /**
- * Class ClicksaleExportServiceProvider
- * @package ClicksaleExport\Providers
+ * Class ClicksalePLuginServiceProvider
+ * @package ClicksalePLugin\Providers
  */
-class ClicksaleExportServiceProvider extends ServiceProvider
+class ClicksalePLuginServiceProvider extends ServiceProvider
 {
     const PLUGIN_NAME = "clicksale";
 
     public function register()
     {
-        $this->getApplication()->register(ClicksaleExportRouteServiceProvider::class);
+        $this->getApplication()->register(ClicksalePLuginRouteServiceProvider::class);
 
         /** @var TemplateContainerContract $templateContainer */
         $templateContainer = pluginApp(TemplateContainerContract::class);

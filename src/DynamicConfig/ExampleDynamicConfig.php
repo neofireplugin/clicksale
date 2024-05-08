@@ -1,6 +1,6 @@
 <?php
 
-namespace ClicksaleExport\DynamicConfig;
+namespace ClicksalePLugin\DynamicConfig;
 
 use Plenty\Modules\Catalog\Contracts\CatalogDynamicConfigContract;
 use Plenty\Modules\Catalog\Contracts\CatalogExportServiceContract;
@@ -9,7 +9,7 @@ use Plenty\Modules\Catalog\Models\Catalog;
 
 /**
  * Class ExampleDynamicConfig
- * @package ClicksaleExport\DynamicConfig
+ * @package ClicksalePLugin\DynamicConfig
  */
 class ExampleDynamicConfig implements CatalogDynamicConfigContract
 {

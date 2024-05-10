@@ -1,4 +1,4 @@
-plentymarkets plugin ClicksalePLugin
+plentymarkets plugin ClicksaleExport
 
 Copyright © 2023 neofire
 

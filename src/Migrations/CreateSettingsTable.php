@@ -6,11 +6,11 @@
  * Time: 15:54
  */
 
-namespace ClicksalePLugin\Migrations;
+namespace ClicksaleExport\Migrations;
 
 use Plenty\Modules\Plugin\DataBase\Contracts\Migrate;
-use ClicksalePLugin\Models\Settings;
-use ClicksalePLugin\Services\SettingsService;
+use ClicksaleExport\Models\Settings;
+use ClicksaleExport\Services\SettingsService;
 
 class CreateSettingsTable
 {

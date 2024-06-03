@@ -365,30 +365,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-        /** @var SimpleTemplateField $size */
-       $size = pluginApp(SimpleTemplateField::class, [
-           'Größe',
-           'size',
-           'Größe', // In a productive plugin this should be translated
-            false,
-            false,
-            false,
-            [],
-            []
-        ]);
-
-        /** @var SimpleTemplateField $color */
-       $color = pluginApp(SimpleTemplateField::class, [
-           'Farbe',
-           'color',
-           'Farbe', // In a productive plugin this should be translated
-            false,
-            false,
-            false,
-            [],
-            []
-        ]);
-
         /** @var SimpleTemplateField $energyclass */
        $property = pluginApp(SimpleTemplateField::class, [
            'Eigenschaften',
@@ -416,8 +392,6 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($baseprice);
         $simpleGroup->addGroupField($shipping);
         $simpleGroup->addGroupField($stock);
-        $simpleGroup->addGroupField($size);
-        $simpleGroup->addGroupField($color);
         $simpleGroup->addGroupField($property);
         
 

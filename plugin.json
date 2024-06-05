@@ -4,6 +4,7 @@
  	"namespace"           	: "ClicksaleExport",
 	"type"			: "general",
 	"version"           	: "1.0.0",
+	"license"		: "AGPL-3.0",
 	"pluginIcon"        	: "icon_plugin_xs.png",
 	"price"             	: 0.00,
 	"description"         	: "Plugin für den Artikelexport zu clicksale",
@@ -20,3 +21,4 @@
   	"runOnBuild"            : ["ClicksaleExport\\Migrations\\CreateSettingsTable","ClicksaleExport\\Migrations\\CreateReferrer"],
   	"platform"              : {"php": ">=8.0,<8.1"},
 }
+

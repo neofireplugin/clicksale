@@ -1,6 +1,14 @@
 {
   "version": "1.0.0",
   "name": "ClicksaleExport",
+  "marketplaceName": {
+        "de": "clicksale Plugin",
+        "en": "clicksale Plugin"
+  },
+  "keywords": [
+      "clicksale", "Katalog"
+  ],
+  "isClosedSource": true,
   "description": "clicksale Plugin",
   "namespace": "ClicksaleExport",
   "pluginIcon": "icon_plugin_xs.png",
@@ -26,4 +34,5 @@
   "platform": {
     "php": ">=8.0,<8.1"
   }
+  
 }

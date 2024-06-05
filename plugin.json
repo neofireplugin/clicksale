@@ -1,24 +1,38 @@
 {
-	"name"                	: "ClicksaleExport",
-  	"marketplaceName"     	: {"de": "clicksale Plugin","en": "clicksale Plugin"},
- 	"namespace"           	: "ClicksaleExport",
-	"type"			: "general",
-	"version"           	: "1.0.0",
-	"license"		: "AGPL-3.0",
-	"pluginIcon"        	: "icon_plugin_xs.png",
-	"price"             	: 0.00,
-	"description"         	: "Plugin für den Artikelexport zu clicksale",
-	"shortDescription"    	: {"de": "Plugin für den Artikelexport zu clicksale.","en": "Plugin to Export the Items to clicksale."},
-	"categories"        	: ["3881"],
-	"keywords"            	: ["Katalog", "plugins", "clicksale", "schnittstelle", "connector"],
-	"author"              	: "neofire Deutschland",
-	"authorIcon"        	: "icon_author_xs.png",
-	"email"             	: "info@neofire.de",
-	"phone"               	: "+49 0571 40 41 733",
-	"webhookUrl"		: "https://www.neofire.de",
-	"license"		: "Proprietär",
-	"serviceProvider"       : "ClicksaleExport\\ClicksaleExportServiceProvider",
-  	"runOnBuild"            : ["ClicksaleExport\\Migrations\\CreateSettingsTable","ClicksaleExport\\Migrations\\CreateReferrer"],
-  	"platform"              : {"php": ">=8.0,<8.1"},
+  "version": "1.0.0",
+  "name": "ClicksaleExport",
+  "marketplaceName": {
+        "de": "clicksale Plugin",
+        "en": "clicksale Plugin"
+  },
+  "keywords": [
+      "clicksale", "Katalog"
+  ],
+  "isClosedSource": true,
+  "description": "clicksale Plugin",
+  "namespace": "ClicksaleExport",
+  "pluginIcon": "icon_plugin_xs.png",
+  "author": "neofire Deutschland",
+  "email": "info@neofire.de",
+  "authorIcon": "icon_author_xs.png",
+  "shortDescription": {
+    "de": "Plugin für den Artikelexport zu clicksale",
+    "en": "Plugin to Export the Items to clicksale"
+  },
+  "license": "AGPL-3.0",
+  "categories": [
+    3881
+  ],
+  "price": 0.00,
+  "type": "general",
+  "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
+  "dependencies": {},
+  "runOnBuild": [
+    "ClicksaleExport\\Migrations\\CreateSettingsTable",
+    "ClicksaleExport\\Migrations\\CreateReferrer"
+  ],
+  "platform": {
+    "php": ">=8.0,<8.1"
+  }
+  
 }
-

@@ -108,10 +108,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         ]);
 
         /** @var SimpleTemplateField $price */
-       $partnerprice = pluginApp(SimpleTemplateField::class, [
-           'Partner Preis',
+       $purchaseprice = pluginApp(SimpleTemplateField::class, [
+           'Einkaufspreis',
            'partnerprice',
-           'Partner Preis', // In a productive plugin this should be translated
+           'Einkaufspreis', // In a productive plugin this should be translated
             true,
             false,
             false,
@@ -449,7 +449,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
-        $simpleGroup->addGroupField($partnerprice);
+        $simpleGroup->addGroupField($purchaseprice);
         $simpleGroup->addGroupField($id);
         $simpleGroup->addGroupField($number);
         $simpleGroup->addGroupField($images);

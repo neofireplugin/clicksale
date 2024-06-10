@@ -112,7 +112,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
            'Einkaufspreis',
            'partnerprice',
            'Einkaufspreis', // In a productive plugin this should be translated
-            true,
+            false,
             false,
             false,
             [],

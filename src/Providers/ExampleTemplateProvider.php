@@ -374,7 +374,17 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             false,
             false,
             [],
-            []
+            [
+                [
+                    'fieldId' => 'attribute-combinationExternalName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => 'combinationExternalName',
+                    'type' => 'variationAttributeName',
+                    'value' => null,
+                    'lang' => 'de'
+                ]
+            ]
         ]);        
         /** @var SimpleTemplateField $energyclass */
        $group = pluginApp(SimpleTemplateField::class, [
@@ -385,7 +395,18 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             false,
             false,
             [],
-            []
+            [
+                [
+                    'fieldId' => 'item-id',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => 'id',
+                    'type' => 'item',
+                    'value' => null,
+                    'lang' => 'de',
+                    'client' => 'de'
+                ]
+            ]
         ]);
 
         /** @var SimpleTemplateField $energyclass */
@@ -397,7 +418,18 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             false,
             false,
             [],
-            []
+            [
+                [
+                    'fieldId' => 'variationCategory-path',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => 'path',
+                    'type' => 'variationCategory',
+                    'value' => null,
+                    'lang' => 'de',
+                    'client' => 'de'
+                ]
+            ]
         ]);  
 
         $simpleGroup->addGroupField($name);

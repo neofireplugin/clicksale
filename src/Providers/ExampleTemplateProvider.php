@@ -107,6 +107,18 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $price */
+       $partnerprice = pluginApp(SimpleTemplateField::class, [
+           'Partner Preis',
+           'partnerprice',
+           'Partner Preis', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            []
+        ]);
+
         /** @var SimpleTemplateField $id */
         $id = pluginApp(SimpleTemplateField::class, [
             'ID',
@@ -430,11 +442,14 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'client' => 'de'
                 ]
             ]
-        ]);  
+        ]);
+
+        
 
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
+        $simpleGroup->addGroupField($partnerprice);
         $simpleGroup->addGroupField($id);
         $simpleGroup->addGroupField($number);
         $simpleGroup->addGroupField($images);

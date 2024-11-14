@@ -107,6 +107,19 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+
+        /** @var SimpleTemplateField $tax */
+       $tax = pluginApp(SimpleTemplateField::class, [
+           'Steuersatz',
+           'tax',
+           'Steuersatz', // In a productive plugin this should be translated
+            false,
+            false,
+            false,
+            [],
+            []
+        ]);
+
         /** @var SimpleTemplateField $price */
        $purchaseprice = pluginApp(SimpleTemplateField::class, [
            'Einkaufspreis',
@@ -449,6 +462,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($name);
         $simpleGroup->addGroupField($description);
         $simpleGroup->addGroupField($price);
+        $simpleGroup->addGroupField($tax);
         $simpleGroup->addGroupField($purchaseprice);
         $simpleGroup->addGroupField($id);
         $simpleGroup->addGroupField($number);

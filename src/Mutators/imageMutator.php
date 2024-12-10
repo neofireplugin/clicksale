@@ -33,7 +33,8 @@ class imageMutator implements CatalogMutatorContract
         if (isset($item["baseprice"])) {
             $parts = explode(' € / ', $item["baseprice"]);
             $pricePart = trim($parts[0]); // Numerischen Teil extrahieren
-            $formattedPrice = number_format((float)str_replace(',', '.', $pricePart), 2, ',', '.'); // Formatieren
+            $truncatedPrice = floor((float)str_replace(',', '.', $pricePart) * 100) / 100; // Abschneiden auf 2 Dezimalstellen
+            $formattedPrice = number_format($truncatedPrice, 2, ',', '.'); // Formatieren mit 2 Dezimalstellen
             $item["baseprice"] = $formattedPrice . ' € / ' . (isset($parts[1]) ? $parts[1] : '');
         }
         

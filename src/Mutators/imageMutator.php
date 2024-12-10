@@ -31,11 +31,11 @@ class imageMutator implements CatalogMutatorContract
         $item["Kategorien"] = str_replace(';',' > ',implode('|',$item["Kategorien"]));
         
         if (isset($item["baseprice"])) {
-            $parts = explode(' € / ', $item["baseprice"]);
+            $parts = explode('€ / ', $item["baseprice"]);
             $pricePart = trim($parts[0]); // Numerischen Teil extrahieren
             $truncatedPrice = floor((float)str_replace(',', '.', $pricePart) * 100) / 100; // Abschneiden auf 2 Dezimalstellen
             $formattedPrice = number_format($truncatedPrice, 2, ',', '.'); // Formatieren mit 2 Dezimalstellen
-            $item["baseprice"] = $formattedPrice . ' € / ' . (isset($parts[1]) ? $parts[1] : '');
+            $item["baseprice"] = $formattedPrice . '€ / ' . (isset($parts[1]) ? $parts[1] : '');
         }
         
         return $item;

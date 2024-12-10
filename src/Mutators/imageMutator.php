@@ -30,7 +30,12 @@ class imageMutator implements CatalogMutatorContract
 
         $item["Kategorien"] = str_replace(';',' > ',implode('|',$item["Kategorien"]));
         
-
+        if (isset($item["baseprice"])) {
+            $parts = explode(' € / ', $item["baseprice"]);
+            $pricePart = trim($parts[0]); // Numerischen Teil extrahieren
+            $formattedPrice = number_format((float)str_replace(',', '.', $pricePart), 2, ',', '.'); // Formatieren
+            $item["baseprice"] = $formattedPrice . ' € / ' . (isset($parts[1]) ? $parts[1] : '');
+        }
         
         return $item;
     }

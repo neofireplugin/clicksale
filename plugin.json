@@ -1,36 +1,36 @@
 {
-    "name": "ClickSale",
-    "author": "Neofire",
-    "shortDescription": {
-        "en": "ClickSale plugin for better linking",
-        "de": "ClickSale plugin für besseres Verlinken"
-    },
-    "description": {
-        "en": "ClickSale plugin for better linking. Connect your store with your affiliate software",
-        "de": "ClickSale plugin für besseres Verlinken. Verbinde deinen Shop mit deiner Affiliate-Software"
-    },
-    "priceModel": {
-        "type": "free"
-    },
-    "categories": [
-        "dashboard"
-    ],
-    "visibility": "hidden",
-    "keywords": {
-        "en": ["Plugin", "ClickSale"],
-        "de": ["Plugin", "ClickSale"]
-    },
-    "require": {
-        "plenty": ">=8.0.0",
-        "php": ">=7.1"
-    },
-    "type": "backend",
-    "serviceProvider": "Neofire\\ClickSale\\Providers\\ClickSaleServiceProvider",
-    "pluginIcon": "pluginIcon.svg",
-    "version": "1.0.0",
-    "autoload": {
-        "psr-4": {
-            "Neofire\\ClickSale\\": ""
-        }
+  "vendor": "Neofire",
+  "name": "ClickSale",
+  "author": "Neofire",
+  "shortDescription": {
+    "en": "ClickSale plugin for better linking",
+    "de": "ClickSale plugin für besseres Verlinken"
+  },
+  "description": {
+    "en": "ClickSale plugin for better linking. Connect your store with your affiliate software",
+    "de": "ClickSale plugin für besseres Verlinken. Verbinde deinen Shop mit deiner Affiliate-Software"
+  },
+  "priceModel": {
+    "type": "free"
+  },
+  "categories": [
+    "integration"
+  ],
+  "keywords": {
+    "en": ["Plugin", "ClickSale"],
+    "de": ["Plugin", "ClickSale"]
+  },
+  "require": {
+    "plenty": ">=8.0.0",
+    "php": ">=7.1"
+  },
+  "type": "backend",
+  "serviceProvider": "Neofire\\ClickSale\\Providers\\ClickSaleServiceProvider",
+  "pluginIcon": "pluginIcon.svg",
+  "version": "1.0.0",
+  "autoload": {
+    "psr-4": {
+      "Neofire\\ClickSale\\": ""
     }
+  }
 }

@@ -1,36 +1,38 @@
 {
-  "vendor": "Neofire",
-  "name": "ClickSale",
-  "author": "Neofire",
-  "shortDescription": {
-    "en": "ClickSale plugin for better linking",
-    "de": "ClickSale plugin für besseres Verlinken"
+  "version": "1.0.2",
+  "name": "ClicksaleExport",
+  "marketplaceName": {
+        "de": "clicksale Plugin",
+        "en": "clicksale Plugin"
   },
-  "description": {
-    "en": "ClickSale plugin for better linking. Connect your store with your affiliate software",
-    "de": "ClickSale plugin für besseres Verlinken. Verbinde deinen Shop mit deiner Affiliate-Software"
-  },
-  "priceModel": {
-    "type": "free"
-  },
-  "categories": [
-    "integration"
+  "keywords": [
+      "clicksale", "Katalog"
   ],
-  "keywords": {
-    "en": ["Plugin", "ClickSale"],
-    "de": ["Plugin", "ClickSale"]
+  "isClosedSource": true,
+  "description": "clicksale Plugin",
+  "namespace": "ClicksaleExport",
+  "pluginIcon": "icon_plugin_xs.png",
+  "author": "neofire Deutschland",
+  "email": "info@neofire.de",
+  "authorIcon": "icon_author_xs.png",
+  "shortDescription": {
+    "de": "Plugin für den Artikelexport zu clicksale",
+    "en": "Plugin to Export the Items to clicksale"
   },
-  "require": {
-    "plenty": ">=8.0.0",
-    "php": ">=7.1"
-  },
-  "type": "backend",
-  "serviceProvider": "Neofire\\ClickSale\\Providers\\ClickSaleServiceProvider",
-  "pluginIcon": "pluginIcon.svg",
-  "version": "1.0.0",
-  "autoload": {
-    "psr-4": {
-      "Neofire\\ClickSale\\": ""
-    }
+  "license": "AGPL-3.0",
+  "categories": [
+    3881
+  ],
+  "price": 0.00,
+  "type": "general",
+  "serviceProvider": "ClicksaleExport\\ClicksaleExportServiceProvider",
+  "dependencies": {},
+  "runOnBuild": [
+    "ClicksaleExport\\Migrations\\CreateSettingsTable",
+    "ClicksaleExport\\Migrations\\CreateReferrer"
+  ],
+  "platform": {
+    "php": ">=8.0,<8.1"
   }
+  
 }

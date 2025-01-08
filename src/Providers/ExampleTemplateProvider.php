@@ -117,7 +117,17 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             false,
             false,
             [],
-            []
+            [
+                [
+                    'fieldId' => 'variation-vat',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "vat",
+                    'type' => "vat",
+                    'fieldType' => "float",
+                    'value' => null
+                ]
+            ]
         ]);
 
         /** @var SimpleTemplateField $price */

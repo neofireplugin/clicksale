@@ -265,6 +265,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                         [
                             'type' => 'own-value',
                             'value' => '<br>',
+                            'fieldType' => 'string'
                         ],
                         [
                             'value' => null,
@@ -272,11 +273,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'type' => 'manufacturer',
                             'key' => 'street',
                             'id' => null,
-                            'fieldType' => "string",
+                            'fieldType' => 'string'
                         ],
                         [
                             'type' => 'own-value',
                             'value' => '&nbsp;',
+                            'fieldType' => 'string'
                         ],
                         [
                             'value' => null,
@@ -284,11 +286,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'type' => 'manufacturer',
                             'key' => 'houseNo',
                             'id' => null,
-                            'fieldType' => "string",
+                            'fieldType' => 'string'
                         ],
                         [
                             'type' => 'own-value',
                             'value' => '<br>',
+                            'fieldType' => 'string'
                         ],
                         [
                             'value' => null,
@@ -296,11 +299,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'type' => 'manufacturer',
                             'key' => 'postcode',
                             'id' => null,
-                            'fieldType' => "string",
+                            'fieldType' => 'string'
                         ],
                         [
                             'type' => 'own-value',
                             'value' => '&nbsp;',
+                            'fieldType' => 'string'
                         ],
                         [
                             'value' => null,
@@ -308,11 +312,12 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'type' => 'manufacturer',
                             'key' => 'town',
                             'id' => null,
-                            'fieldType' => "string",
+                            'fieldType' => "string"
                         ],
                         [
                             'type' => 'own-value',
                             'value' => '&nbsp;',
+                            'fieldType' => 'string'
                         ],
                         [
                             'value' => null,
@@ -320,7 +325,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'type' => 'manufacturer',
                             'key' => 'manufacturerCountryName',
                             'id' => null,
-                            'fieldType' => "string",
+                            'fieldType' => 'string'
                         ]
                     ]
                 ]

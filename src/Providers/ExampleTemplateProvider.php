@@ -243,6 +243,27 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $manufacturer */
+       $manufacturerinfo = pluginApp(SimpleTemplateField::class, [
+           'Herstelleradresse',
+           'manufacturerinfo',
+           'Herstelleradresse', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [
+                    'fieldId' => 'item-manufacturerName',
+                    'id' => null,
+                    'isCombined' => false,
+                    'key' => "name",
+                    'type' => "manufacturer",
+                    'value' => ''
+                ]
+            ]
+        ]);
+
         /** @var SimpleTemplateField $energyclass */
        $energyclass = pluginApp(SimpleTemplateField::class, [
            'Energieklasse',
@@ -480,6 +501,7 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($energyclass);
         $simpleGroup->addGroupField($energylable);
         $simpleGroup->addGroupField($manufacturer);
+        $simpleGroup->addGroupField($manufacturerinfo);
         $simpleGroup->addGroupField($link);
         $simpleGroup->addGroupField($ean);
         $simpleGroup->addGroupField($shipping);

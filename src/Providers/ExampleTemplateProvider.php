@@ -243,8 +243,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-        /** @var SimpleTemplateField $manufacturerInfo */
-        $manufacturerInfo = pluginApp(SimpleTemplateField::class, [
+        /** @var SimpleTemplateField $manufacturerinfo */
+        $manufacturerinfo = pluginApp(SimpleTemplateField::class, [
             'Herstelleradresse', // Feldname
             'manufacturerinfo',  // Key
             'Herstelleradresse', // Beschriftung (sollte im produktiven Plugin übersetzt werden)

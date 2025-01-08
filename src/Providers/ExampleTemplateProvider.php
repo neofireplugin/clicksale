@@ -321,10 +321,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                             'key' => 'manufacturerCountryName',
                             'id' => null,
                             'fieldType' => "string",
-                        ],
-                    ],
-                ],
-            ],
+                        ]
+                    ]
+                ]
+            ]
         ]);
 
         /** @var SimpleTemplateField $energyclass */

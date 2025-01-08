@@ -243,25 +243,88 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-        /** @var SimpleTemplateField $manufacturer */
-       $manufacturerinfo = pluginApp(SimpleTemplateField::class, [
-           'Herstelleradresse',
-           'manufacturerinfo',
-           'Herstelleradresse', // In a productive plugin this should be translated
-            true,
-            false,
-            false,
-            [],
+        /** @var SimpleTemplateField $manufacturerInfo */
+        $manufacturerInfo = pluginApp(SimpleTemplateField::class, [
+            'Herstelleradresse', // Feldname
+            'manufacturerinfo',  // Key
+            'Herstelleradresse', // Beschriftung (sollte im produktiven Plugin übersetzt werden)
+            true,                // Aktiv
+            false,               // Deaktivierbar
+            false,               // Sortierbar
+            [],                  // Additional Data
             [
                 [
-                    'fieldId' => 'item-manufacturerName',
+                    'fieldId' => 'item-manufacturerLegalName',
                     'id' => null,
-                    'isCombined' => false,
-                    'key' => "name",
+                    'isCombined' => true,
+                    'key' => "legalName",
                     'type' => "manufacturer",
-                    'value' => ''
-                ]
-            ]
+                    'value' => null,
+                    'fieldType' => "string",
+                    'additionalSources' => [
+                        [
+                            'type' => 'own-value',
+                            'value' => '<br>',
+                        ],
+                        [
+                            'value' => null,
+                            'fieldId' => 'item-manufacturerStreet',
+                            'type' => 'manufacturer',
+                            'key' => 'street',
+                            'id' => null,
+                            'fieldType' => "string",
+                        ],
+                        [
+                            'type' => 'own-value',
+                            'value' => '&nbsp;',
+                        ],
+                        [
+                            'value' => null,
+                            'fieldId' => 'item-manufacturerHouseNo',
+                            'type' => 'manufacturer',
+                            'key' => 'houseNo',
+                            'id' => null,
+                            'fieldType' => "string",
+                        ],
+                        [
+                            'type' => 'own-value',
+                            'value' => '<br>',
+                        ],
+                        [
+                            'value' => null,
+                            'fieldId' => 'item-manufacturerPostcode',
+                            'type' => 'manufacturer',
+                            'key' => 'postcode',
+                            'id' => null,
+                            'fieldType' => "string",
+                        ],
+                        [
+                            'type' => 'own-value',
+                            'value' => '&nbsp;',
+                        ],
+                        [
+                            'value' => null,
+                            'fieldId' => 'item-manufacturerTown',
+                            'type' => 'manufacturer',
+                            'key' => 'town',
+                            'id' => null,
+                            'fieldType' => "string",
+                        ],
+                        [
+                            'type' => 'own-value',
+                            'value' => '&nbsp;',
+                        ],
+                        [
+                            'value' => null,
+                            'fieldId' => 'item-manufacturerCountryName',
+                            'type' => 'manufacturer',
+                            'key' => 'manufacturerCountryName',
+                            'id' => null,
+                            'fieldType' => "string",
+                        ],
+                    ],
+                ],
+            ],
         ]);
 
         /** @var SimpleTemplateField $energyclass */

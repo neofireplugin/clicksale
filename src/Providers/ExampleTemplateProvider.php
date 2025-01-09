@@ -245,23 +245,28 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
 
         /** @var SimpleTemplateField $manufacturerinfo */
         $manufacturerinfo = pluginApp(SimpleTemplateField::class, [
-            'Herstelleradresse', // Feldname
+            'Sicherheitshinweis', // Feldname
             'manufacturerinfo',  // Key
-            'Herstelleradresse', // Beschriftung (sollte im produktiven Plugin übersetzt werden)
+            'Sicherheitshinweis', // Beschriftung (sollte im produktiven Plugin übersetzt werden)
             true,                // Aktiv
             false,               // Deaktivierbar
             false,               // Sortierbar
             [],                  // Additional Data
             [
                 [
-                    'fieldId' => 'item-manufacturerLegalName',
-                    'id' => null,
-                    'isCombined' => true,
-                    'key' => "legalName",
-                    'type' => "manufacturer",
-                    'value' => '',
-                    'fieldType' => "string",
+                    'type' => 'own-value',
+                    'value' => '<b>Herstelleradresse:</b><br>',
                     'additionalSources' => [
+
+                        [
+                            'fieldId' => 'item-manufacturerLegalName',
+                            'id' => null,
+                            'isCombined' => true,
+                            'key' => "legalName",
+                            'type' => "manufacturer",
+                            'value' => '',
+                            'fieldType' => "string",
+                        ],
                         [
                             'type' => 'own-value',
                             'value' => '<br>'

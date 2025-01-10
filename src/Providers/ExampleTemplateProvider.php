@@ -243,30 +243,25 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
-        /** @var SimpleTemplateField $manufacturerinfo */
-        $manufacturerinfo = pluginApp(SimpleTemplateField::class, [
-            'Sicherheitshinweis', // Feldname
-            'manufacturerinfo',  // Key
-            'Sicherheitshinweis', // Beschriftung (sollte im produktiven Plugin übersetzt werden)
+        /** @var SimpleTemplateField $manufactureraddress */
+        $manufactureraddress = pluginApp(SimpleTemplateField::class, [
+            'Herstelleradresse', // Feldname
+            'manufactureraddress',  // Key
+            'Herstelleradresse', // Beschriftung (sollte im produktiven Plugin übersetzt werden)
             true,                // Aktiv
             false,               // Deaktivierbar
             false,               // Sortierbar
             [],                  // Additional Data
             [
                 [
-                    'type' => 'own-value',
-                    'value' => '<b>Herstelleradresse:</b><br>',
+                    'fieldId' => 'item-manufacturerLegalName',
+                    'id' => null,
+                    'isCombined' => true,
+                    'key' => "legalName",
+                    'type' => "manufacturer",
+                    'value' => '',
+                    'fieldType' => "string",
                     'additionalSources' => [
-
-                        [
-                            'fieldId' => 'item-manufacturerLegalName',
-                            'id' => null,
-                            'isCombined' => true,
-                            'key' => "legalName",
-                            'type' => "manufacturer",
-                            'value' => '',
-                            'fieldType' => "string",
-                        ],
                         [
                             'type' => 'own-value',
                             'value' => '<br>'
@@ -330,6 +325,18 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     ]
                 ]
             ]
+        ]);
+
+        /** @var SimpleTemplateField $price */
+       $notice = pluginApp(SimpleTemplateField::class, [
+           'Sicherheitshinweis',
+           'notice',
+           'Sicherheitshinweis', // In a productive plugin this should be translated
+            false,
+            false,
+            false,
+            [],
+            []
         ]);
 
         /** @var SimpleTemplateField $energyclass */
@@ -569,7 +576,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($energyclass);
         $simpleGroup->addGroupField($energylable);
         $simpleGroup->addGroupField($manufacturer);
-        $simpleGroup->addGroupField($manufacturerinfo);
+        $simpleGroup->addGroupField($manufactureraddress);
+        $simpleGroup->addGroupField($notice);
         $simpleGroup->addGroupField($link);
         $simpleGroup->addGroupField($ean);
         $simpleGroup->addGroupField($shipping);

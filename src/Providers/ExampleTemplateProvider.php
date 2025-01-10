@@ -208,6 +208,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                     'imageCount' => "10",
                     'additionalSources' => [
                         [
+                            'type' => 'own-value',
+                            'value' => '|'
+                        ],
+                        [
                             'fieldId' => 'image-itemImages-list',
                             'id' => "itemImages",
                             'key' => "list",

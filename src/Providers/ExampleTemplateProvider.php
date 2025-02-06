@@ -445,10 +445,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 [
                     'isCombined' => 'false',
                     'value' => '',
-                    'fieldId' => 'basePrice-amount',
-                    'type' => "base-price",
-                    'key' => "amount",
-                    'id' => '1'
+                    'fieldId' => 'variation-amount',
+                    'type' => "unit",
+                    'key' => "content",
+                    'id' => null
                 ]
             ]
         ]);
@@ -466,10 +466,10 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
                 [
                     'isCombined' => 'false',
                     'value' => '',
-                    'fieldId' => 'basePrice-unit-name',
-                    'type' => "base-price",
-                    'key' => "unit-name",
-                    'id' => '1',
+                    'fieldId' => 'variation-unitName',
+                    'type' => "unit",
+                    'key' => "name",
+                    'id' => null,
                     'lang' => 'de'
                 ]
             ]

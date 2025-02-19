@@ -107,6 +107,53 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
             ]
         ]);
 
+        /** @var SimpleTemplateField $delivery */
+       $delivery = pluginApp(SimpleTemplateField::class, [
+           'Lieferzeit',
+           'delivery',
+           'Lieferzeit', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [    
+                    'isCombined' => false,
+                    'value' => null,
+                    'fieldId' => 'variation-availabilityName',
+                    'type' => "availability-name",
+                    'key' => null,
+                    'lang' => "de",
+                    'id' => null
+                    
+                    
+                ]
+            ]
+        ]);
+
+        /** @var SimpleTemplateField $condition */
+       $condition = pluginApp(SimpleTemplateField::class, [
+           'Zustand',
+           'condition',
+           'Zustand', // In a productive plugin this should be translated
+            true,
+            false,
+            false,
+            [],
+            [
+                [    
+                    'isCombined' => false,
+                    'value' => null,
+                    'fieldId' => 'item-conditionName',
+                    'type' => "conditionName",
+                    'key' => null,
+                    'lang' => "de",
+                    'id' => null
+                    
+                    
+                ]
+            ]
+        ]);
 
         /** @var SimpleTemplateField $tax */
        $tax = pluginApp(SimpleTemplateField::class, [
@@ -576,6 +623,8 @@ class ExampleTemplateProvider extends AbstractGroupedTemplateProvider
         $simpleGroup->addGroupField($images);
         $simpleGroup->addGroupField($energyclass);
         $simpleGroup->addGroupField($energylable);
+        $simpleGroup->addGroupField($condition);
+        $simpleGroup->addGroupField($delivery);
         $simpleGroup->addGroupField($manufacturer);
         $simpleGroup->addGroupField($manufactureraddress);
         $simpleGroup->addGroupField($notice);
